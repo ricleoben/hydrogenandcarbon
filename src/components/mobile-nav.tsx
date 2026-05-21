@@ -57,7 +57,7 @@ export function MobileNav({ items, menuLabel, openLabel, closeLabel }: MobileNav
         <button
           type="button"
           aria-label={closeLabel}
-          className="fixed inset-0 top-[57px] z-40 bg-[rgba(25,28,29,0.35)] backdrop-blur-[2px] sm:top-[65px]"
+          className="fixed inset-0 top-[var(--site-header-height)] z-40 bg-[rgba(25,28,29,0.35)] backdrop-blur-[2px]"
           onClick={() => setOpen(false)}
         />
       ) : null}
@@ -65,7 +65,7 @@ export function MobileNav({ items, menuLabel, openLabel, closeLabel }: MobileNav
       <nav
         id="mobile-nav-panel"
         aria-label={menuLabel}
-        className={`fixed inset-x-0 top-[57px] z-50 max-h-[calc(100dvh-57px)] overflow-y-auto border-b border-[rgba(56,56,55,0.1)] bg-[rgba(248,250,250,0.98)] px-5 py-4 shadow-[0_20px_50px_rgba(25,28,29,0.12)] backdrop-blur-xl transition-all duration-200 sm:top-[65px] sm:max-h-[calc(100dvh-65px)] ${
+        className={`fixed inset-x-0 top-[var(--site-header-height)] z-50 max-h-[calc(100dvh-var(--site-header-height))] overflow-y-auto border-b border-[rgba(56,56,55,0.1)] bg-[rgba(248,250,250,0.98)] px-5 py-4 shadow-[0_20px_50px_rgba(25,28,29,0.12)] backdrop-blur-xl transition-all duration-200 ${
           open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"
         }`}
       >

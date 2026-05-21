@@ -78,11 +78,11 @@ export async function SiteHeader() {
   const ui = getCommonUi(locale);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/55 bg-[rgba(248,250,250,0.78)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:gap-6 lg:px-16">
+    <header className="sticky top-0 z-50 border-b border-white/55 bg-[rgba(248,250,250,0.92)] backdrop-blur-xl">
+      <div className="mx-auto flex h-[var(--site-header-height)] max-w-7xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-8 lg:px-16">
         <Link
           href="/"
-          className="flex min-w-0 shrink items-center gap-2 rounded-md transition-opacity hover:opacity-90 sm:gap-3 lg:gap-4"
+          className="flex min-w-0 flex-1 items-center gap-2.5 rounded-md transition-opacity hover:opacity-90 sm:max-w-none sm:flex-initial sm:gap-3 lg:gap-4"
           aria-label={ui.homepageAria}
         >
           <Image
@@ -90,20 +90,28 @@ export async function SiteHeader() {
             alt="RIC Leoben"
             width={240}
             height={76}
-            className="hidden h-8 w-auto object-contain sm:block sm:h-10 lg:h-11"
+            className="h-7 w-auto shrink-0 object-contain sm:h-10 lg:h-11"
             priority
           />
-          <span className="hidden h-7 w-px bg-[var(--color-charcoal)]/15 sm:block sm:h-8 lg:h-9" aria-hidden />
+          <span className="h-6 w-px shrink-0 bg-[var(--color-charcoal)]/15 sm:h-8 lg:h-9" aria-hidden />
           <Image
             src="/Hydrogen and carbon logo.png"
             alt="SCoRe A⁺ Hydrogen and Carbon Center"
             width={700}
             height={105}
-            className="h-8 w-auto max-w-[min(100%,220px)] object-contain object-left sm:h-10 sm:max-w-none lg:h-11"
+            className="hidden h-8 w-auto object-contain object-left sm:block sm:h-10 lg:h-11"
             priority
           />
+          <div className="min-w-0 sm:hidden">
+            <p className="font-[family-name:var(--font-manrope)] text-[11px] font-bold leading-tight text-[var(--color-teal)]">
+              SCoRe A⁺
+            </p>
+            <p className="text-[10px] font-medium leading-tight text-[var(--color-charcoal)]/80">
+              {pick(locale, "Hydrogen & Carbon", "Wasserstoff & Kohlenstoff")}
+            </p>
+          </div>
         </Link>
-        <div className="flex shrink-0 items-center gap-2 sm:gap-4 lg:gap-5 xl:gap-6">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-4 lg:gap-5 xl:gap-6">
           <nav className="hidden items-center gap-5 lg:flex xl:gap-6">
             {navItems.map((item) => (
             <div key={item.href} className="group relative py-3">

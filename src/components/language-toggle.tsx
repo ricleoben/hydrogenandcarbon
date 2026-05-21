@@ -19,15 +19,15 @@ export function LanguageToggle() {
   };
 
   return (
-    <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+    <div className="flex shrink-0 items-center gap-1 sm:gap-2">
       <button
         type="button"
         onClick={() => updateLocale("en")}
         aria-pressed={locale === "en"}
         className={
           locale === "en"
-            ? "rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--color-charcoal)] shadow-[0_1px_4px_rgba(25,28,29,0.08)] sm:px-3.5 sm:py-2 sm:text-[13px]"
-            : "rounded-full px-2 py-1.5 text-xs font-medium text-[var(--color-charcoal)]/55 sm:px-3 sm:py-2 sm:text-[13px]"
+            ? "rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-charcoal)] shadow-[0_1px_4px_rgba(25,28,29,0.08)] sm:px-3.5 sm:py-2 sm:text-[13px]"
+            : "rounded-full px-2 py-1 text-[11px] font-medium text-[var(--color-charcoal)]/55 sm:px-3 sm:py-2 sm:text-[13px]"
         }
       >
         EN
@@ -38,8 +38,8 @@ export function LanguageToggle() {
         aria-pressed={locale === "de"}
         className={
           locale === "de"
-            ? "rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--color-charcoal)] shadow-[0_1px_4px_rgba(25,28,29,0.08)] sm:px-3.5 sm:py-2 sm:text-[13px]"
-            : "rounded-full px-2 py-1.5 text-xs font-medium text-[var(--color-charcoal)]/55 sm:px-3 sm:py-2 sm:text-[13px]"
+            ? "rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-charcoal)] shadow-[0_1px_4px_rgba(25,28,29,0.08)] sm:px-3.5 sm:py-2 sm:text-[13px]"
+            : "rounded-full px-2 py-1 text-[11px] font-medium text-[var(--color-charcoal)]/55 sm:px-3 sm:py-2 sm:text-[13px]"
         }
       >
         DE

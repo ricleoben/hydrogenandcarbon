@@ -1,6 +1,14 @@
 "use client";
 
 import { ContentImage } from "@/components/content-image";
+import {
+  HeroPill,
+  HeroTextPanel,
+  heroDescriptionClassName,
+  heroDesktopGradientClassName,
+  heroMobileScrimClassName,
+  heroTitleClassName,
+} from "@/components/hero-text-panel";
 import { SectionIntro } from "@/components/sections";
 import { useLanguage } from "@/components/language-provider";
 import { getHomeTranslations } from "@/data/translations/home";
@@ -147,37 +155,33 @@ export function HomePageContent() {
 
   return (
     <>
-      <section
-        className="relative min-h-[520px] overflow-hidden px-4 pt-10 pb-6 sm:min-h-[620px] sm:px-8 sm:pt-14 sm:pb-10 lg:min-h-[820px] lg:px-16 lg:pt-16 lg:pb-12"
-        data-no-watermark
-      >
-        <div className="absolute inset-0" data-no-watermark>
+      <section className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[680px]" data-no-watermark>
+        <div className="absolute inset-0 min-h-[420px] sm:min-h-[520px] lg:min-h-[720px]" data-no-watermark>
           <ContentImage
             src="/Forschungszentrum-Wasserstoff-und-Kohlenstoff.gif"
             alt=""
             aria-hidden
             fill
-            className="object-cover object-[78%_center]"
+            className="object-cover object-[center_35%] sm:object-[78%_center]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(7,46,51,0.90)_0%,rgba(7,46,51,0.62)_45%,rgba(7,46,51,0.18)_80%,transparent_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(185,218,208,0.12),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.58),_transparent_42%)]" />
+          <div className={heroMobileScrimClassName()} />
+          <div className={heroDesktopGradientClassName()} />
+          <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(circle_at_top_left,_rgba(185,218,208,0.12),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.58),_transparent_42%)] sm:block" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[460px] max-w-7xl flex-col justify-end sm:min-h-[540px] lg:min-h-[740px]">
-          <div className="w-full pb-4 text-white">
-            <span className="mb-4 inline-block rounded-full bg-[rgba(0,114,125,0.65)] px-3 py-1.5 text-[10px] font-semibold tracking-[0.18em] text-white/90 sm:mb-5 sm:px-4 sm:text-xs sm:tracking-[0.22em]">
-              {t.hero.pill}
-            </span>
-            <h1 className="w-full text-[clamp(1.65rem,5vw,4.2rem)] font-semibold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+        <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-8 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-14 lg:pt-12">
+          <HeroTextPanel className="max-w-3xl">
+            <HeroPill>{t.hero.pill}</HeroPill>
+            <h1 className={heroTitleClassName()}>
               {t.hero.h1Line1}
               <br /> {t.hero.h1Line2}
             </h1>
-            <p className="mt-3 w-full text-base leading-7 text-white/72 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
-              <strong className="font-semibold text-white/90">{t.hero.paragraphStrong1}</strong>{" "}
+            <p className={heroDescriptionClassName()}>
+              <strong className="font-semibold text-white">{t.hero.paragraphStrong1}</strong>{" "}
               {t.hero.paragraphMiddle}{" "}
-              <strong className="font-semibold text-white/90">{t.hero.paragraphStrong2}</strong>
+              <strong className="font-semibold text-white">{t.hero.paragraphStrong2}</strong>
             </p>
-          </div>
+          </HeroTextPanel>
         </div>
       </section>
 

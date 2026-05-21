@@ -9,6 +9,13 @@
   --color-mint: #b9dad0;
   --color-charcoal: #383837;
   --color-muted: #5f6765;
+  --site-header-height: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: 4.25rem;
+  }
 }
 
 @theme inline {

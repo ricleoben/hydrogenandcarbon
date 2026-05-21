@@ -2,6 +2,14 @@
 
 import { useState } from "react";
 import { ContentImage } from "@/components/content-image";
+import {
+  HeroPill,
+  HeroTextPanel,
+  heroDescriptionClassName,
+  heroDesktopGradientClassName,
+  heroMobileScrimClassName,
+  heroTitleClassName,
+} from "@/components/hero-text-panel";
 import { useLanguage } from "@/components/language-provider";
 import { getCommonUi } from "@/data/translations/common";
 import { getSafeTranslations } from "@/data/translations/safe";
@@ -25,37 +33,33 @@ export default function HydrogenAndCarbonSafePage() {
 
   return (
     <>
-      <section className="relative h-[320px] overflow-hidden sm:h-[420px] lg:h-[620px]" data-no-watermark>
-        <div className="hero-side-track flex h-full">
-          {safeHeroSliderImages.map((image, index) => (
-            <div key={`${image}-${index}`} className="hero-side-slide-item relative h-full">
-              <ContentImage
-                src={image}
-                alt=""
-                aria-hidden
-                fill
-                className="object-cover"
-                data-no-watermark
-              />
-            </div>
-          ))}
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(7,46,51,0.88)_0%,rgba(7,46,51,0.58)_45%,rgba(7,46,51,0.16)_80%,transparent_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.38),_transparent_42%)]" />
-        <div className="absolute inset-x-0 bottom-0 px-4 pb-8 text-white sm:px-10 sm:pb-12 lg:px-16">
-          <div className="mx-auto flex w-full max-w-7xl flex-col justify-end">
-            <div className="w-full pb-2 text-white">
-              <p className="mb-4 inline-block rounded-full bg-[rgba(0,114,125,0.65)] px-3 py-1.5 text-[10px] font-semibold tracking-[0.18em] text-white/90 sm:px-4 sm:text-xs sm:tracking-[0.22em]">
-                {t.hero.pill}
-              </p>
-              <h1 className="w-full text-[clamp(1.65rem,5vw,4.2rem)] font-semibold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
-                {t.hero.title}
-              </h1>
-              <p className="mt-4 w-full text-base leading-7 text-white/78 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:text-lg">
-                {t.hero.description}
-              </p>
-            </div>
+      <section className="relative min-h-[360px] overflow-hidden sm:min-h-[440px] lg:min-h-[620px]" data-no-watermark>
+        <div className="absolute inset-0 min-h-[380px] sm:min-h-[440px] lg:min-h-[620px]">
+          <div className="hero-side-track flex h-full min-h-[inherit]">
+            {safeHeroSliderImages.map((image, index) => (
+              <div key={`${image}-${index}`} className="hero-side-slide-item relative h-full min-h-[inherit]">
+                <ContentImage
+                  src={image}
+                  alt=""
+                  aria-hidden
+                  fill
+                  className="object-cover object-center"
+                  data-no-watermark
+                />
+              </div>
+            ))}
           </div>
+          <div className={heroMobileScrimClassName()} />
+          <div className={heroDesktopGradientClassName()} />
+          <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.38),_transparent_42%)] sm:block" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-10 sm:pb-12 lg:px-16">
+          <HeroTextPanel className="max-w-3xl">
+            <HeroPill>{t.hero.pill}</HeroPill>
+            <h1 className={heroTitleClassName()}>{t.hero.title}</h1>
+            <p className={heroDescriptionClassName()}>{t.hero.description}</p>
+          </HeroTextPanel>
         </div>
       </section>
 
