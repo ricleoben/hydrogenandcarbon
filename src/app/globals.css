@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #f7fbfa;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef5f3;
+  --color-teal: #00727d;
+  --color-teal-dark: #0a5d66;
+  --color-mint: #b9dad0;
+  --color-charcoal: #383837;
+  --color-muted: #5f6765;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-charcoal);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-manrope);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-charcoal);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+[data-no-watermark] .mul-watermark-badge {
+  display: none !important;
+}
+
+.editorial-shadow {
+  box-shadow: 0 40px 60px -20px rgba(25, 28, 29, 0.05);
+}
+
+.ambient-shadow {
+  box-shadow: 0 30px 70px -30px rgba(25, 28, 29, 0.14);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.hero-side-track {
+  width: 500%;
+  animation: hero-side-slide 20s linear infinite;
+  will-change: transform;
+}
+
+.hero-side-slide-item {
+  width: 20%;
+  flex: 0 0 20%;
+}
+
+@keyframes hero-side-slide {
+  0%,
+  22% {
+    transform: translateX(0);
+  }
+  25%,
+  47% {
+    transform: translateX(-20%);
+  }
+  50%,
+  72% {
+    transform: translateX(-40%);
+  }
+  75%,
+  97% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+.mul-watermark-badge {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  z-index: 30;
+  border-radius: 0.2rem;
+  background: rgba(0, 114, 125, 0.9);
+  color: #fff;
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 0.28rem 0.4rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-side-track {
+    animation: none;
+  }
+}

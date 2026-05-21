@@ -1,0 +1,228 @@
+export type H2CPublicationPoster = {
+  id: string;
+  title: string;
+  /** Full author list as shown on the poster */
+  authors: string;
+  category: "Hydrogen Production" | "Hydrogen Storage, Transport, and Application" | "Carbon and its Applications";
+  page?: number;
+  pdfPath: string;
+};
+
+export const h2cPublicationPosters: H2CPublicationPoster[] = [
+  {
+    id: "buxbaum-soec-coelectrolysis",
+    title: "Synthesis and Characterisation of Composite Electrodes for Co-Electrolysis in SOECs",
+    authors: "Buxbaum, B.; Bucher, E.; Egger, A.; Brunner, R.",
+    category: "Hydrogen Production",
+    page: 8,
+    pdfPath: "/posters/Synthesis and Characterisation of composite electrodes.pdf",
+  },
+  {
+    id: "cvetkovska-multi-energy",
+    title: "Multi-energy System Modeling to identify the Role of Renewable Gases in a Future Climate-neutral Energy System",
+    authors: "Cvetkovska, R.; Kienberger, T.",
+    category: "Hydrogen Production",
+    page: 9,
+    pdfPath: "/posters/Multi-energy System Modeling.pdf",
+  },
+  {
+    id: "daghagheleh-thermal-plasma",
+    title: "The Potential of Thermal Plasma Pyrolysis for Clean Hydrogen Gas and High-Quality Solid Carbon Production from Methane",
+    authors: "Daghagheleh, O.; Lehner, M.; Schenk, J.",
+    category: "Hydrogen Production",
+    page: 10,
+    pdfPath: "/posters/The Potential of Thermal Plasma Pyrolysis.pdf",
+  },
+  {
+    id: "neumueller-her-surfaces",
+    title: "Hydrogen Evolution Reaction on Compositionally Multi-complex Metal Surfaces",
+    authors: "Neumueller, D.; Rafailovic, L.; Gammer, C.; Sitte, W.; Eckert, J.",
+    category: "Hydrogen Production",
+    page: 11,
+    pdfPath: "/posters/Hyrdrogen evoution reaction on compositionally.pdf",
+  },
+  {
+    id: "neuschitzer-bubble-column",
+    title: "Methane Pyrolysis for Hydrogen Production in a Liquid Metal Bubble Column Reactor",
+    authors: "Neuschitzer, D.; Scheiblehner, D.; Wibner, S.; Sprung, A.; Antrekowitsch, H.",
+    category: "Hydrogen Production",
+    page: 13,
+    pdfPath: "/posters/Methane pyrolysis for hydrogen production .pdf",
+  },
+  {
+    id: "pretschuh-perovskites",
+    title: "Tailoring High Entropy Perovskites for Green Hydrogen Production via Solid Oxide Electrolysis",
+    authors: "Pretschuh, P.; Egger, A.; Brunner, R.; Bucher, E.",
+    category: "Hydrogen Production",
+    page: 12,
+    pdfPath: "/posters/Tailoring high entropy perovskites.pdf",
+  },
+  {
+    id: "scheiblehner-molten-catalysts",
+    title: "Methane Pyrolysis in Molten Metallic Catalysts",
+    authors: "Scheiblehner, D.; Neuschitzer, D.; Antrekowitsch, H.; Sprung, A.; Wibner, S.",
+    category: "Hydrogen Production",
+    page: 14,
+    pdfPath: "/posters/Methane Pyrolysis in moten metallic.pdf",
+  },
+  {
+    id: "weiss-reactor-design",
+    title: "Reactor and Process Design for Hydrogen Production in Liquid Metal Bubble Columns",
+    authors: "Weiss, H.; Lehner, M.",
+    category: "Hydrogen Production",
+    page: 15,
+    pdfPath: "/posters/Reactor and process design for hydrogen.pdf",
+  },
+  {
+    id: "bensing-seal-rocks",
+    title: "Laboratory Investigations of Seal Rocks for Underground Hydrogen Storage",
+    authors: "Bensing, J.P.; Misch, D.; Skerbisch, L.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 17,
+    pdfPath: "/posters/Laboratory investigations of seal rocks for.pdf",
+  },
+  {
+    id: "bhosale-carbon-steel",
+    title: "Sustainability of Carbon Steel in Underground Hydrogen Gas Storage Facilities",
+    authors: "Bhosale, S.; Moshtaghi, M.; Mori, G.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 18,
+    pdfPath: "/posters/Sustainability of carbon steel in ug.pdf",
+  },
+  {
+    id: "eichinger-embrittlement",
+    title: "Hydrogen Uptake and Embrittlement of Line Pipe Steel under Pressures up to 1000 bar",
+    authors: "Eichinger, M.; Mori, G.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 19,
+    pdfPath: "/posters/Hydrogen uptake and embrittlement.pdf",
+  },
+  {
+    id: "hamed-pipelines",
+    title: "Repurposing Natural Gas Pipelines for 100% Hydrogen Transport",
+    authors: "Hamed, A.; Moshtaghi, M.; Mori, G.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 20,
+    pdfPath: "/posters/Repurposing natural gas pipelines.pdf",
+  },
+  {
+    id: "sammer-cements",
+    title: "A Fundamental Mineralogical Investigation of Downhole Cements within the Context of Underground Hydrogen Storage",
+    authors: "Sammer, T.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 23,
+    pdfPath: "/posters/A fundamental mineralogical investigation of.pdf",
+  },
+  {
+    id: "schweiger-hybrid-materials",
+    title: "Hydrogen Storage in Porous Metal Hydride Polymer Hybrid Materials",
+    authors: "Schweiger, L.; Kiener, D.; Mori, G.; Spieckermann, F.; Eckert, J.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 24,
+    pdfPath: "/posters/Hydrogen Storage in porous metal .pdf",
+  },
+  {
+    id: "sharifian-polymer-carriers",
+    title: "Polymer-based Hydrogen Carriers for Mobile Application",
+    authors: "Sharifian, M.; Kern, W.; Riess, G.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 25,
+    pdfPath: "/posters/Polymer based hydrogen carrieers for mobile.pdf",
+  },
+  {
+    id: "stiedl-reactive-transport",
+    title: "Underground Hydrogen Storage and In-situ Gas Conversion: Reactive Transport Mechanisms on Different Scales",
+    authors: "Stiedl, G.; Jasek, P.; Jammernegg, B.; Ott, H.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 26,
+    pdfPath: "/posters/Underground hydrogen storage and in-situ gas .pdf",
+  },
+  {
+    id: "stock-sans-h2",
+    title: "Hydrogen Physisorption Mechanisms in Nanoporous Carbons: Insights from SANS using a Hierarchical Contrast Model",
+    authors:
+      "Stock, S.; Seyffertitz, M.; Kostoglou, N.; Rauscher, M.V.; Demè, B.; Cristiglio, V.; Rols, S.; Hinder, S.; Baker, M.; Presser, V.; Mitterer, C.; Paris, O.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 27,
+    pdfPath: "/posters/Hydrogen Physisorption mechanisms in.pdf",
+  },
+  {
+    id: "surisetty-lohc-hdpe-pok",
+    title: "Effect of LOHC on HDPE and POK under Different Temperature Conditions",
+    authors: "Jyothsna, S.; Lucyshyn, T.; Holzer, C.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 28,
+    pdfPath: "/posters/Effect of lOHC on HDPE .pdf",
+  },
+  {
+    id: "zeiler-mechanical-properties",
+    title: "Mechanical Properties of Nanoporous Carbons for Hydrogen Storage Applications",
+    authors: "Zeiler, S.; Strassburg, M.; Kostoglou, N.; Maier-Kiener, V.; Mitterer, C.",
+    category: "Hydrogen Storage, Transport, and Application",
+    page: 29,
+    pdfPath: "/posters/Mechanical properties of nanoporous carbons.pdf",
+  },
+  {
+    id: "pustahija-surface-modification",
+    title: "Surface Modification of Pyrolytic Carbon",
+    authors: "Pustahija, L.; Kern, W.",
+    category: "Carbon and its Applications",
+    page: 36,
+    pdfPath: "/posters/Surface modification of pyrolytic carbon.pdf",
+  },
+  {
+    id: "leiner-interplay",
+    title: "Interplay between Carbon Structures and their Surface Functionalization for Improved Hydrogen Storage",
+    authors: "Leiner, T.",
+    category: "Carbon and its Applications",
+    page: 35,
+    pdfPath: "/posters/Interplay between carbon structures and their .pdf",
+  },
+  {
+    id: "seyffertitz-saxs-sans",
+    title: "In-situ SAXS and SANS on Supercapacitors with Nanoporous Carbon Electrodes and Aqueous Electrolytes",
+    authors: "Seyffertitz, M.; Stock, S.; Rauscher, M.V.; Prehal, C.; Haas, S.; Porcar, L.; Paris, O.",
+    category: "Carbon and its Applications",
+    page: 37,
+    pdfPath: "/posters/In situ SAXS and SANS on .pdf",
+  },
+  {
+    id: "knabl-functionalization-nanoporous",
+    title: "Functionalization of Nanoporous Carbons",
+    authors: "Knabl, F.; Kostoglou, N.; Bandl, C.; Tkadletz, M.; Grießer, T.; Mitterer, C.",
+    category: "Carbon and its Applications",
+    pdfPath: "/posters/Functionalization of Nanoporous Carbons.pdf",
+  },
+  {
+    id: "stock-gas-sorption-analysis",
+    title: "Gas Sorption Analysis for Advanced Nanoporous Carbon Evaluation",
+    authors: "Kostoglou, N.; Mitterer, C.",
+    category: "Carbon and its Applications",
+    pdfPath: "/posters/Gas Sorption Analysis for Advanced Nanopore.pdf",
+  },
+  {
+    id: "rollenitz-modified-pechini",
+    title: "Modified Pechini Synthesis of Perovskite-type Oxide Catalysts for CO2 Utilization",
+    authors: "Rollenitz, J.; Drexler, H.; Schrenk, F.; Rameshan, C.",
+    category: "Hydrogen Storage, Transport, and Application",
+    pdfPath: "/posters/Modified pechini synthesis of perovskite.pdf",
+  },
+  {
+    id: "hartig-processing-carbon",
+    title: "Processing of Carbon Produced by Methane Pyrolysis",
+    authors: "Hartig, G.",
+    category: "Carbon and its Applications",
+    pdfPath: "/posters/Processing of carbon produced by.pdf",
+  },
+  {
+    id: "rauscher-soft-templated",
+    title: "Soft Templated Carbons",
+    authors: "Rauscher, M.V.; Seyffertitz, M.; Kohns, R.; Stock, S.; Paris, O.",
+    category: "Carbon and its Applications",
+    pdfPath: "/posters/Soft templated carbons.pdf",
+  },
+];
+
+export function getPublicationPosterById(id: string) {
+  return h2cPublicationPosters.find((poster) => poster.id === id);
+}
