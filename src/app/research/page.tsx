@@ -17,7 +17,7 @@ export default function HydrogenAndCarbonResearchPage() {
 
   return (
     <>
-      <section className="px-6 pt-24 pb-14 sm:px-10 lg:px-16">
+      <section className="px-4 pt-20 pb-10 sm:px-10 sm:pt-24 sm:pb-14 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <SectionIntro title={researchLabels.title} />
           <div className="mt-8 flex flex-wrap gap-3">
@@ -38,7 +38,7 @@ export default function HydrogenAndCarbonResearchPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-16 sm:px-10 lg:px-16">
+      <section className="px-4 pb-12 sm:px-10 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
           <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-teal)] sm:text-3xl">
             {getResearchTrackLabel(locale, activeTrack)}

@@ -148,7 +148,7 @@ export function HomePageContent() {
   return (
     <>
       <section
-        className="relative min-h-[680px] overflow-hidden px-5 pt-12 pb-8 sm:min-h-[740px] sm:px-8 sm:pt-14 sm:pb-10 lg:min-h-[820px] lg:px-16 lg:pt-16 lg:pb-12"
+        className="relative min-h-[520px] overflow-hidden px-4 pt-10 pb-6 sm:min-h-[620px] sm:px-8 sm:pt-14 sm:pb-10 lg:min-h-[820px] lg:px-16 lg:pt-16 lg:pb-12"
         data-no-watermark
       >
         <div className="absolute inset-0" data-no-watermark>
@@ -163,16 +163,16 @@ export function HomePageContent() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(185,218,208,0.12),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.58),_transparent_42%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[608px] max-w-7xl flex-col justify-end sm:min-h-[660px] lg:min-h-[740px]">
+        <div className="relative mx-auto flex min-h-[460px] max-w-7xl flex-col justify-end sm:min-h-[540px] lg:min-h-[740px]">
           <div className="w-full pb-4 text-white">
             <span className="mb-4 inline-block rounded-full bg-[rgba(0,114,125,0.65)] px-3 py-1.5 text-[10px] font-semibold tracking-[0.18em] text-white/90 sm:mb-5 sm:px-4 sm:text-xs sm:tracking-[0.22em]">
               {t.hero.pill}
             </span>
-            <h1 className="w-full text-[clamp(2rem,3.8vw,4.2rem)] font-semibold leading-[1.08] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+            <h1 className="w-full text-[clamp(1.65rem,5vw,4.2rem)] font-semibold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               {t.hero.h1Line1}
               <br /> {t.hero.h1Line2}
             </h1>
-            <p className="mt-4 w-full text-lg leading-8 text-white/72 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-xl sm:leading-9">
+            <p className="mt-3 w-full text-base leading-7 text-white/72 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
               <strong className="font-semibold text-white/90">{t.hero.paragraphStrong1}</strong>{" "}
               {t.hero.paragraphMiddle}{" "}
               <strong className="font-semibold text-white/90">{t.hero.paragraphStrong2}</strong>
@@ -181,7 +181,7 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pt-14 pb-8 sm:px-10 lg:px-16">
+      <section className="bg-white px-4 pt-10 pb-6 sm:px-10 sm:pt-14 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow={t.about.eyebrow}
@@ -192,12 +192,12 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="px-6 pt-4 pb-10 sm:px-10 lg:px-16">
+      <section className="px-4 pt-4 pb-8 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal)]">
             {t.strategy.eyebrow}
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.strategy.title}
           </h2>
 
@@ -249,12 +249,12 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pt-10 pb-10 sm:px-10 lg:px-16">
+      <section className="bg-white px-4 pt-8 pb-8 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal)]">
             {t.researchFocus.eyebrow}
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.researchFocus.title}
           </h2>
           <p className="mt-4 text-[1.02rem] leading-8 text-[var(--color-muted)]">
@@ -360,7 +360,7 @@ export function HomePageContent() {
                   className={
                     locale === "de"
                       ? "mt-4 grid grid-cols-1 gap-x-8 gap-y-2.5 text-sm leading-6 text-white/82 sm:grid-cols-2"
-                      : "mt-3 grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm leading-6 text-white/82 sm:grid-cols-4"
+                      : "mt-3 grid grid-cols-1 gap-y-2 text-sm leading-6 text-white/82 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-1.5 lg:grid-cols-4"
                   }
                 >
                   {t.researchFocus.educationOutreach.items.map((item) => (
@@ -376,14 +376,14 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] px-6 pt-16 pb-12 text-white sm:px-10 lg:px-16">
+      <section className="bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] px-4 pt-12 pb-10 text-white sm:px-10 sm:pt-16 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
                 {t.keyMetrics.eyebrow}
               </p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
                 {t.keyMetrics.title}
               </h2>
             </div>
@@ -392,11 +392,11 @@ export function HomePageContent() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 sm:gap-4">
             {t.keyMetrics.metrics.map((metric) => (
               <article
                 key={metric.label}
-                className="flex flex-col rounded-[1.25rem] border border-white/15 bg-white/10 p-4 backdrop-blur-[2px]"
+                className="flex flex-col rounded-[1.25rem] border border-white/15 bg-white/10 p-3 backdrop-blur-[2px] sm:p-4"
               >
                 <MetricIconBadge name={metric.icon} />
                 <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">
@@ -427,12 +427,12 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-surface-soft)] px-6 pt-12 pb-10 sm:px-10 lg:px-16">
+      <section className="bg-[var(--color-surface-soft)] px-4 pt-10 pb-8 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal)]">
             {t.methanePyrolysis.eyebrow}
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.methanePyrolysis.title}
           </h2>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -458,9 +458,9 @@ export function HomePageContent() {
             </div>
           </div>
           <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="mt-7 flex h-[560px] flex-col">
+            <div className="flex flex-col gap-5 sm:gap-6">
               {t.methanePyrolysis.steps.map((step, i) => (
-                <div key={step.step} className="flex flex-1 gap-5">
+                <div key={step.step} className="flex gap-4 sm:gap-5">
                   <div className="flex flex-col items-center">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-teal)] text-sm font-bold text-white">
                       {i + 1}
@@ -508,18 +508,18 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
+      <section className="bg-white px-4 py-12 sm:px-10 sm:py-16 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal)]">
             {t.whyMethanePyrolysis.eyebrow}
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.whyMethanePyrolysis.title}
           </h2>
           <div className="mt-10 grid gap-6">
             <div className="grid gap-6 lg:grid-cols-[1.08fr_1fr] lg:items-stretch">
               <article className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-6 text-white editorial-shadow sm:p-8">
-                <h3 className="text-[1.95rem] font-semibold tracking-tight">
+                <h3 className="text-xl font-semibold tracking-tight sm:text-[1.95rem]">
                   {t.whyMethanePyrolysis.methanePyrolysisBox.title}
                 </h3>
                 <p className="mt-4 text-[0.92rem] leading-7 text-white/80">
@@ -537,7 +537,7 @@ export function HomePageContent() {
                   {t.whyMethanePyrolysis.methanePyrolysisBox.paragraphs[2]}
                 </p>
               </article>
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white">
+              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white sm:min-h-[280px] lg:min-h-[320px]">
                 <ContentImage
                   src="/methane-pyrolysis-diagram.png"
                   alt={t.whyMethanePyrolysis.methanePyrolysisBox.diagramAlt}
@@ -550,7 +550,7 @@ export function HomePageContent() {
 
             <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
               <article className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-6 text-white editorial-shadow sm:p-8">
-                <h3 className="text-[1.95rem] font-semibold tracking-tight">
+                <h3 className="text-xl font-semibold tracking-tight sm:text-[1.95rem]">
                   {t.whyMethanePyrolysis.pureCarbonBox.title}
                 </h3>
                 <p className="mt-4 text-[0.92rem] leading-7 text-white/80">
@@ -560,7 +560,7 @@ export function HomePageContent() {
                   {t.whyMethanePyrolysis.pureCarbonBox.paragraphs[1]}
                 </p>
               </article>
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white">
+              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white sm:min-h-[280px] lg:min-h-[320px]">
                 <ContentImage
                   src="/pure-carbon-pyrolysis-diagram.png"
                   alt={t.whyMethanePyrolysis.pureCarbonBox.diagramAlt}
@@ -574,12 +574,12 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="px-6 pt-10 pb-10 sm:px-10 lg:px-16">
+      <section className="px-4 pt-8 pb-10 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal)]">
             {t.carbonApplicationsSection.eyebrow}
           </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.carbonApplicationsSection.title}
           </h2>
           <p className="mt-4 text-[1.02rem] leading-8 text-[var(--color-muted)]">
@@ -588,7 +588,7 @@ export function HomePageContent() {
           <div className="mt-10 grid gap-6">
             <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
               <article className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-6 text-white editorial-shadow sm:p-7">
-                <h3 className="text-[1.65rem] font-semibold tracking-tight">
+                <h3 className="text-lg font-semibold tracking-tight sm:text-[1.65rem]">
                   {t.carbonApplicationsSection.agriculture.title}
                 </h3>
                 <p className="mt-3 text-[0.9rem] leading-6 text-white/80">
@@ -609,7 +609,7 @@ export function HomePageContent() {
                   {t.carbonApplicationsSection.agriculture.closingParagraph}
                 </p>
               </article>
-              <div className="relative h-[300px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:h-[360px] lg:h-auto">
+              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:h-auto">
                 <ContentImage
                   src="/carbon_in_agriculture.png"
                   alt={t.carbonApplicationsSection.agriculture.imageAlt}
@@ -621,7 +621,7 @@ export function HomePageContent() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-              <div className="relative h-[300px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:h-[360px] lg:order-first lg:h-auto">
+              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:order-first lg:h-auto">
                 <ContentImage
                   src="/carbon_in_building_materials.png"
                   alt={t.carbonApplicationsSection.buildingMaterials.imageAlt}
@@ -631,7 +631,7 @@ export function HomePageContent() {
                 />
               </div>
               <article className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-6 text-white editorial-shadow sm:p-7">
-                <h3 className="text-[1.65rem] font-semibold tracking-tight">
+                <h3 className="text-lg font-semibold tracking-tight sm:text-[1.65rem]">
                   {t.carbonApplicationsSection.buildingMaterials.title}
                 </h3>
                 <p className="mt-3 text-[0.9rem] leading-6 text-white/80">

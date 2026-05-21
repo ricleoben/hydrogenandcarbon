@@ -84,6 +84,8 @@ export const commonUi = {
     noCategoryPosters: "No posters are available in this category.",
     filterAll: "All",
     homepageAria: "Go to Hydrogen and Carbon Center homepage",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   de: {
     menu: "Menü",
@@ -127,6 +129,8 @@ export const commonUi = {
     noCategoryPosters: "In dieser Kategorie sind keine Poster verfügbar.",
     filterAll: "Alle",
     homepageAria: "Zur Startseite des Hydrogen and Carbon Centers",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
   },
 } as const;
 

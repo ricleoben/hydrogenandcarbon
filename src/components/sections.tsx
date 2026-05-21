@@ -37,7 +37,7 @@ export function SectionIntro({
         </p>
       ) : null}
       <h2
-        className={`max-w-none text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl ${titleColor}`}
+        className={`max-w-none text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl ${titleColor}`}
       >
         {title}
       </h2>

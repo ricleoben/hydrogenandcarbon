@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageToggle } from "@/components/language-toggle";
+import { MobileNav } from "@/components/mobile-nav";
 import { footerContactLines } from "@/data/site-content";
 import { getCommonUi, getFooterLinks, getNavItems } from "@/data/translations/common";
 import { pick } from "@/lib/i18n";
@@ -78,10 +79,10 @@ export async function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/55 bg-[rgba(248,250,250,0.78)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-4 lg:gap-6 lg:px-16">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:gap-6 lg:px-16">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3 rounded-md transition-opacity hover:opacity-90 -ml-3 sm:-ml-3 lg:-ml-3 sm:gap-4"
+          className="flex min-w-0 shrink items-center gap-2 rounded-md transition-opacity hover:opacity-90 sm:gap-3 lg:gap-4"
           aria-label={ui.homepageAria}
         >
           <Image
@@ -89,20 +90,20 @@ export async function SiteHeader() {
             alt="RIC Leoben"
             width={240}
             height={76}
-            className="h-9 w-auto object-contain sm:h-10 lg:h-11"
+            className="hidden h-8 w-auto object-contain sm:block sm:h-10 lg:h-11"
             priority
           />
-          <span className="h-7 w-px bg-[var(--color-charcoal)]/15 sm:h-8 lg:h-9" aria-hidden />
+          <span className="hidden h-7 w-px bg-[var(--color-charcoal)]/15 sm:block sm:h-8 lg:h-9" aria-hidden />
           <Image
             src="/Hydrogen and carbon logo.png"
             alt="SCoRe A⁺ Hydrogen and Carbon Center"
             width={700}
             height={105}
-            className="h-9 w-auto object-contain sm:h-10 lg:h-11"
+            className="h-8 w-auto max-w-[min(100%,220px)] object-contain object-left sm:h-10 sm:max-w-none lg:h-11"
             priority
           />
         </Link>
-        <div className="flex min-w-0 items-center gap-4 lg:gap-5 xl:gap-6">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-4 lg:gap-5 xl:gap-6">
           <nav className="hidden items-center gap-5 lg:flex xl:gap-6">
             {navItems.map((item) => (
             <div key={item.href} className="group relative py-3">
@@ -137,6 +138,12 @@ export async function SiteHeader() {
           ))}
           </nav>
           <LanguageToggle />
+          <MobileNav
+            items={navItems}
+            menuLabel={ui.menu}
+            openLabel={ui.openMenu}
+            closeLabel={ui.closeMenu}
+          />
         </div>
       </div>
     </header>
@@ -152,7 +159,7 @@ export async function SiteFooter() {
 
   return (
     <footer className="mt-16 border-t border-[rgba(56,56,55,0.08)] bg-[var(--color-surface)] text-[var(--color-charcoal)]">
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-10 sm:py-14 lg:px-16">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-10 sm:py-14 lg:px-16">
         <div className="grid gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.15fr)_auto_minmax(0,1fr)] lg:gap-12 xl:gap-16">
           <div className="min-w-0">
             <div className="inline-flex items-center gap-3 sm:gap-4">
@@ -206,11 +213,11 @@ export async function SiteFooter() {
               alt={pick(locale, "Montanuniversität Leoben seal", "Siegel der Montanuniversität Leoben")}
               width={320}
               height={320}
-              className="h-44 w-auto max-w-[min(100%,320px)] object-contain sm:h-52 lg:h-60 xl:h-64"
+              className="h-36 w-auto max-w-[min(100%,280px)] object-contain sm:h-52 lg:h-60 xl:h-64"
             />
           </div>
           <div className="min-w-0 w-full max-w-md justify-self-start self-start lg:justify-self-end">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:gap-x-10">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:gap-x-10">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-charcoal)]/80">{ui.menu}</p>
                 <nav className="mt-3 flex flex-col gap-1.5" aria-label={ui.menu}>

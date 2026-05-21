@@ -25,7 +25,7 @@ export default function HydrogenAndCarbonMosaPage() {
 
   return (
     <>
-      <section className="relative h-[420px] overflow-hidden sm:h-[540px] lg:h-[620px]" data-no-watermark>
+      <section className="relative h-[320px] overflow-hidden sm:h-[420px] lg:h-[620px]" data-no-watermark>
         <div className="hero-side-track flex h-full">
           {mosaHeroSliderImages.map((image, index) => (
             <div key={`${image}-${index}`} className="hero-side-slide-item relative h-full">
@@ -42,13 +42,13 @@ export default function HydrogenAndCarbonMosaPage() {
         </div>
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(7,46,51,0.88)_0%,rgba(7,46,51,0.58)_45%,rgba(7,46,51,0.16)_80%,transparent_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.38),_transparent_42%)]" />
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-10 text-white sm:px-10 sm:pb-12 lg:px-16">
+        <div className="absolute inset-x-0 bottom-0 px-4 pb-8 text-white sm:px-10 sm:pb-12 lg:px-16">
           <div className="mx-auto flex w-full max-w-7xl flex-col justify-end">
             <div className="w-full pb-2 text-white">
               <p className="mb-4 inline-block rounded-full bg-[rgba(0,114,125,0.65)] px-3 py-1.5 text-[10px] font-semibold tracking-[0.18em] text-white/90 sm:px-4 sm:text-xs sm:tracking-[0.22em]">
                 {t.hero.pill}
               </p>
-              <h1 className="w-full text-[clamp(2rem,3.8vw,4.2rem)] font-semibold leading-[1.08] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+              <h1 className="w-full text-[clamp(1.65rem,5vw,4.2rem)] font-semibold leading-[1.1] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
                 {t.hero.title}
               </h1>
               <p className="mt-4 w-full text-base leading-7 text-white/78 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:text-lg">
@@ -59,12 +59,12 @@ export default function HydrogenAndCarbonMosaPage() {
         </div>
       </section>
 
-      <section className="px-6 pt-12 pb-16 sm:px-10 sm:pt-14 lg:px-16">
+      <section className="px-4 pt-10 pb-12 sm:px-10 sm:pt-14 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <div>
               <div>
-                <h2 className="text-3xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-4xl">
+                <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl">
                   {t.intro.title}
                 </h2>
                 {t.intro.paragraphs.map((paragraph, index) => (
@@ -184,7 +184,7 @@ export default function HydrogenAndCarbonMosaPage() {
                   alt={currentMosaSlide.alt}
                   width={1200}
                   height={800}
-                  className="h-[420px] w-full object-cover sm:h-[500px]"
+                  className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-[420px] sm:object-cover"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
               </div>

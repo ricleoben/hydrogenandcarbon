@@ -27,7 +27,7 @@ export default async function PosterDetailPage({ params }: PosterDetailPageProps
 
   return (
     <>
-      <section className="px-6 pt-24 pb-14 sm:px-10 lg:px-16">
+      <section className="px-4 pt-20 pb-10 sm:px-10 sm:pt-24 sm:pb-14 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <Link
             href="/publications"
@@ -39,7 +39,7 @@ export default async function PosterDetailPage({ params }: PosterDetailPageProps
         </div>
       </section>
 
-      <section className="px-6 pb-16 sm:px-10 lg:px-16">
+      <section className="px-4 pb-12 sm:px-10 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl rounded-[1.75rem] bg-[var(--color-surface)] p-6 editorial-shadow sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-sm leading-6 text-[var(--color-muted)]">

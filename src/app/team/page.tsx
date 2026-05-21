@@ -10,7 +10,7 @@ export default async function HydrogenAndCarbonTeamPage() {
 
   return (
     <>
-      <section className="relative h-[420px] overflow-hidden sm:h-[540px] lg:h-[620px]" data-no-watermark>
+      <section className="relative h-[320px] overflow-hidden sm:h-[420px] lg:h-[620px]" data-no-watermark>
         <ContentImage
           src="/Forschungszentrum-Wasserstoff-und-Kohlenstoff.gif"
           alt=""
@@ -22,15 +22,15 @@ export default async function HydrogenAndCarbonTeamPage() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,rgba(7,46,51,0.42),transparent)]" />
       </section>
 
-      <section className="px-6 pt-8 pb-8 sm:px-10 lg:px-16">
+      <section className="px-4 pt-6 pb-8 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="max-w-none text-3xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-4xl md:text-5xl">
+          <h2 className="max-w-none text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl lg:text-5xl">
             {t.title}
           </h2>
         </div>
       </section>
 
-      <section className="px-6 pb-16 sm:px-10 lg:px-16">
+      <section className="px-4 pb-12 sm:px-10 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{t.clusterManagers}</p>
