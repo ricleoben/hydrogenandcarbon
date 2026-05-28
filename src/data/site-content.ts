@@ -31,7 +31,7 @@ export const footerContactLines = [
   { label: "+43 3842 402-7601", href: "tel:+4338424027601" },
   { label: "ric-leoben@unileoben.ac.at", href: "mailto:ric-leoben@unileoben.ac.at" },
   {
-    label: "LinkedIn - Resources Innovation Center",
+    label: "LinkedIn - Resources Innovation Centre",
     href: "https://www.linkedin.com/company/ric-leoben/",
   },
 ] as const;
@@ -81,13 +81,13 @@ export const hydrogenCarbonCategories: HydrogenCarbonCategory[] = [
     id: "carbon-applications",
     title: "Carbon & its applications",
     summary:
-      "Research on carbon in agriculture, porous carbons, functionalization, and industrial utilization pathways connected to circular economy goals.",
+      "Research on carbon in agriculture, porous carbons, functionalisation, and industrial utilisation pathways connected to circular economy goals.",
   },
   {
     id: "safe",
     title: "SAFE",
     summary:
-      "Sustainable Agriculture and Forestry Explained living lab activities connecting education, biodiversity, social health, and resource use.",
+      "Sustainable Agriculture and Forestry Experienced living lab activities connecting education, biodiversity, social health, and resource use.",
   },
 ];
 
@@ -120,22 +120,22 @@ export const hydrogenCarbonArticles: HydrogenCarbonArticle[] = [
       "This project examines methane decomposition in molten metallic catalysts and alloys as an alternative hydrogen production route with reduced direct CO2 emissions.",
   },
   {
-    id: "novel-catalyst-materials-co2-utilization",
+    id: "novel-catalyst-materials-co2-utilisation",
     categoryId: "hydrogen-storage-transport-applications",
-    title: "Development of Novel Catalyst Materials of CO2 Utilization",
+    title: "Development of Novel Catalyst Materials of CO2 Utilisation",
     authors: "Schrenk, Florian",
-    summary: "Catalyst development for utilization and conversion processes.",
+    summary: "Catalyst development for utilisation and conversion processes.",
     detail:
-      "Research explores catalyst material systems supporting hydrogen-linked conversion pathways and CO2 utilization, with focus on activity, selectivity, and durability.",
+      "Research explores catalyst material systems supporting hydrogen-linked conversion pathways and CO2 utilisation, with focus on activity, selectivity, and durability.",
   },
   {
     id: "seal-rocks-underground-hydrogen-storage",
     categoryId: "hydrogen-storage-transport-applications",
     title: "Laboratory investigations of seal rocks for underground hydrogen storage",
     authors: "Bensing, Joel",
-    summary: "Seal rock behavior and integrity for subsurface storage systems.",
+    summary: "Seal rock behaviour and integrity for subsurface storage systems.",
     detail:
-      "This study explores geotechnical and material behavior of seal rocks relevant to long-term underground hydrogen storage and containment reliability.",
+      "This study explores geotechnical and material behaviour of seal rocks relevant to long-term underground hydrogen storage and containment reliability.",
   },
   {
     id: "carbon-steel-underground-hydrogen-storage-facilities",
@@ -144,16 +144,16 @@ export const hydrogenCarbonArticles: HydrogenCarbonArticle[] = [
     authors: "Bhosale, Saurabh",
     summary: "Material durability and sustainability of carbon steel infrastructures.",
     detail:
-      "The article investigates long-term behavior, integrity risks, and sustainability implications of carbon steel in underground hydrogen storage operations.",
+      "The article investigates long-term behaviour, integrity risks, and sustainability implications of carbon steel in underground hydrogen storage operations.",
   },
   {
     id: "hydrogen-uptake-embrittlement-pipeline-steel",
     categoryId: "hydrogen-storage-transport-applications",
     title: "Hydrogen uptake and embrittlement of line pipe steel under pressures up to 1000 bar",
     authors: "Eichinger, Matthias",
-    summary: "Embrittlement and high-pressure behavior of pipeline steels.",
+    summary: "Embrittlement and high-pressure behaviour of pipeline steels.",
     detail:
-      "Research analyzes hydrogen-material interactions in pipeline steels under extreme pressure conditions to inform infrastructure safety and standards.",
+      "Research analyses hydrogen-material interactions in pipeline steels under extreme pressure conditions to inform infrastructure safety and standards.",
   },
   {
     id: "natural-gas-pipelines-hydrogen-transport",
@@ -171,7 +171,7 @@ export const hydrogenCarbonArticles: HydrogenCarbonArticle[] = [
     authors: "Abu Zahra, Nadine",
     summary: "Assessment of pyrolytic carbon for agricultural soils.",
     detail:
-      "The study investigates whether methane pyrolysis-derived carbon can contribute to soil quality and agricultural resilience while supporting circular carbon utilization.",
+      "The study investigates whether methane pyrolysis-derived carbon can contribute to soil quality and agricultural resilience while supporting circular carbon utilisation.",
   },
   {
     id: "processing-carbon-from-methane-pyrolysis",
@@ -185,9 +185,9 @@ export const hydrogenCarbonArticles: HydrogenCarbonArticle[] = [
   {
     id: "nanoporous-carbons-hydrogen-storage",
     categoryId: "carbon-applications",
-    title: "Functionalization of Nanoporous Carbons for Hydrogen Storage",
+    title: "Functionalisation of Nanoporous Carbons for Hydrogen Storage",
     authors: "Knabl, Florian",
-    summary: "Material functionalization for improved storage behavior.",
+    summary: "Material functionalisation for improved storage behaviour.",
     detail:
       "This article explores nanoporous carbon modification strategies to improve hydrogen adsorption performance and storage potential in advanced energy systems.",
   },

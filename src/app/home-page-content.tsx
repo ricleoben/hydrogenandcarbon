@@ -2,12 +2,13 @@
 
 import { ContentImage } from "@/components/content-image";
 import {
+  HeroPageSection,
   HeroPill,
   HeroTextPanel,
-  heroDescriptionClassName,
   heroDesktopGradientClassName,
+  heroHomeDescriptionClassName,
+  heroHomeTitleClassName,
   heroMobileScrimClassName,
-  heroTitleClassName,
 } from "@/components/hero-text-panel";
 import { SectionIntro } from "@/components/sections";
 import { useLanguage } from "@/components/language-provider";
@@ -149,41 +150,58 @@ function MetricIconBadge({ name }: { name: IconName }) {
   );
 }
 
+function MetricValue({ value }: { value: string }) {
+  const arrowParts = value.split(/\s*→\s*/);
+  if (arrowParts.length === 2) {
+    return (
+      <span className="inline-flex flex-wrap items-baseline gap-x-1">
+        <span className="whitespace-nowrap">{arrowParts[0]}</span>
+        <span className="whitespace-nowrap" aria-hidden="true">
+          →
+        </span>
+        <span className="whitespace-nowrap">{arrowParts[1]}</span>
+      </span>
+    );
+  }
+
+  return <span className="whitespace-nowrap">{value}</span>;
+}
+
 export function HomePageContent() {
   const { locale } = useLanguage();
   const t = getHomeTranslations(locale);
 
   return (
     <>
-      <section className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] lg:min-h-[680px]" data-no-watermark>
-        <div className="absolute inset-0 min-h-[420px] sm:min-h-[520px] lg:min-h-[720px]" data-no-watermark>
-          <ContentImage
-            src="/Forschungszentrum-Wasserstoff-und-Kohlenstoff.gif"
-            alt=""
-            aria-hidden
-            fill
-            className="object-cover object-[center_35%] sm:object-[78%_center]"
-          />
-          <div className={heroMobileScrimClassName()} />
-          <div className={heroDesktopGradientClassName()} />
-          <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(circle_at_top_left,_rgba(185,218,208,0.12),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.58),_transparent_42%)] sm:block" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-8 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-14 lg:pt-12">
-          <HeroTextPanel className="max-w-3xl">
-            <HeroPill>{t.hero.pill}</HeroPill>
-            <h1 className={heroTitleClassName()}>
-              {t.hero.h1Line1}
-              <br /> {t.hero.h1Line2}
-            </h1>
-            <p className={heroDescriptionClassName()}>
-              <strong className="font-semibold text-white">{t.hero.paragraphStrong1}</strong>{" "}
-              {t.hero.paragraphMiddle}{" "}
-              <strong className="font-semibold text-white">{t.hero.paragraphStrong2}</strong>
-            </p>
-          </HeroTextPanel>
-        </div>
-      </section>
+      <HeroPageSection
+        background={
+          <>
+            <ContentImage
+              src="/Forschungszentrum-Wasserstoff-und-Kohlenstoff.gif"
+              alt=""
+              aria-hidden
+              fill
+              className="object-cover object-[center_35%] sm:object-[78%_center]"
+            />
+            <div className={heroMobileScrimClassName()} />
+            <div className={heroDesktopGradientClassName()} />
+            <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(circle_at_top_left,_rgba(185,218,208,0.12),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.58),_transparent_42%)] sm:block" />
+          </>
+        }
+      >
+        <HeroTextPanel className="max-w-3xl pb-4 text-white">
+          <HeroPill>{t.hero.pill}</HeroPill>
+          <h1 className={heroHomeTitleClassName()}>
+            {t.hero.h1Line1}
+            <br /> {t.hero.h1Line2}
+          </h1>
+          <p className={heroHomeDescriptionClassName()}>
+            <strong className="font-semibold text-white/90">{t.hero.paragraphStrong1}</strong>{" "}
+            {t.hero.paragraphMiddle}{" "}
+            <strong className="font-semibold text-white/90">{t.hero.paragraphStrong2}</strong>
+          </p>
+        </HeroTextPanel>
+      </HeroPageSection>
 
       <section className="bg-white px-4 pt-10 pb-6 sm:px-10 sm:pt-14 lg:px-16">
         <div className="mx-auto max-w-7xl">
@@ -268,11 +286,12 @@ export function HomePageContent() {
           <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-6">
             <div className="relative min-h-[260px] overflow-hidden rounded-[1.75rem] editorial-shadow sm:min-h-[300px] lg:min-h-0 lg:h-full">
               <ContentImage
-                src="/blick ins forschunzentrum.jpeg"
+                src="/forschunzentrum.jpeg"
                 alt={t.researchFocus.researchCentreImageAlt}
                 fill
+                quality={92}
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 640px"
               />
             </div>
 
@@ -407,9 +426,9 @@ export function HomePageContent() {
                   {metric.label}
                 </p>
                 <p className="mt-1.5 text-[1.6rem] font-semibold leading-tight tracking-tight">
-                  {metric.value}
+                  <MetricValue value={metric.value} />
                 </p>
-                <p className="mt-2 text-xs leading-5 text-white/72">{metric.description}</p>
+                <p className="mt-2 text-sm leading-6 text-white/72">{metric.description}</p>
               </article>
             ))}
           </div>
@@ -423,7 +442,7 @@ export function HomePageContent() {
                 <MetricIconBadge name={item.icon} />
                 <div>
                   <p className="text-sm font-semibold tracking-tight text-white">{item.title}</p>
-                  <p className="mt-1.5 text-xs leading-5 text-white/72">{item.description}</p>
+                  <p className="mt-1.5 text-sm leading-6 text-white/72">{item.description}</p>
                 </div>
               </article>
             ))}
@@ -451,9 +470,9 @@ export function HomePageContent() {
               {t.methanePyrolysis.callouts.map((callout) => (
                 <div
                   key={callout.value}
-                  className="flex items-start gap-4 rounded-[1rem] border border-[rgba(56,56,55,0.08)] bg-white px-4 py-3"
+                  className="flex items-center gap-4 rounded-[1rem] border border-[rgba(56,56,55,0.08)] bg-white px-4 py-3"
                 >
-                  <span className="mt-0.5 shrink-0 text-[1.6rem] font-bold leading-none tracking-tight text-[var(--color-teal)]">
+                  <span className="shrink-0 text-[1.6rem] font-bold leading-none tracking-tight text-[var(--color-teal)]">
                     {callout.value}
                   </span>
                   <p className="text-sm leading-6 text-[var(--color-muted)]">{callout.text}</p>
@@ -461,16 +480,16 @@ export function HomePageContent() {
               ))}
             </div>
           </div>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="flex flex-col gap-5 sm:gap-6">
+          <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-stretch">
+            <div className="flex flex-col gap-5 sm:gap-6 lg:min-h-[560px] lg:gap-0">
               {t.methanePyrolysis.steps.map((step, i) => (
-                <div key={step.step} className="flex gap-4 sm:gap-5">
-                  <div className="flex flex-col items-center">
+                <div key={step.step} className="flex gap-4 sm:gap-5 lg:min-h-0 lg:flex-1">
+                  <div className="flex w-10 shrink-0 flex-col items-center self-stretch">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-teal)] text-sm font-bold text-white">
                       {i + 1}
                     </div>
                     {i < t.methanePyrolysis.steps.length - 1 && (
-                      <div className="mt-2 w-px flex-1 bg-[var(--color-teal)]/20" />
+                      <div className="mt-3 w-px min-h-10 flex-1 bg-[var(--color-teal)]/20" />
                     )}
                   </div>
                   <div className="pr-2">
@@ -485,13 +504,16 @@ export function HomePageContent() {
                 </div>
               ))}
             </div>
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white" data-no-watermark>
+            <div
+              className="relative flex flex-col overflow-hidden rounded-[1.5rem] border border-[rgba(56,56,55,0.1)] bg-white lg:min-h-[560px]"
+              data-no-watermark
+            >
               <ContentImage
                 src="/pyrolysis-system-diagram.png"
                 alt={t.methanePyrolysis.diagramAlt}
                 width={1400}
                 height={900}
-                className="h-full max-h-[560px] w-full object-contain"
+                className="h-full min-h-0 flex-1 max-h-[560px] w-full object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 data-no-watermark
               />

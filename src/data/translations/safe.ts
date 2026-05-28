@@ -4,7 +4,7 @@ const safeContent = {
   en: {
     hero: {
       pill: "SAFE",
-      title: "SAFE - Sustainable Agriculture and Forestry Explained",
+      title: "SAFE - Sustainable Agriculture and Forestry Experienced",
       description:
         "A transdisciplinary platform that connects research, education, and practice for climate adaptation, healthy soils, and sustainable resource use.",
     },
@@ -126,7 +126,7 @@ const safeContent = {
   de: {
     hero: {
       pill: "SAFE",
-      title: "SAFE – Nachhaltige Land- und Forstwirtschaft verständlich gemacht",
+      title: "SAFE – Nachhaltige Land- und Forstwirtschaft erleben",
       description:
         "Eine transdisziplinäre Plattform, die Forschung, Bildung und Praxis für Klimaanpassung, gesunde Böden und nachhaltige Ressourcennutzung verbindet.",
     },

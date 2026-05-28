@@ -96,7 +96,7 @@ export async function SiteHeader() {
           <span className="h-6 w-px shrink-0 bg-[var(--color-charcoal)]/15 sm:h-8 lg:h-9" aria-hidden />
           <Image
             src="/Hydrogen and carbon logo.png"
-            alt="SCoRe A⁺ Hydrogen and Carbon Center"
+            alt="SCoRe A⁺ Hydrogen and Carbon Centre"
             width={700}
             height={105}
             className="hidden h-8 w-auto object-contain object-left sm:block sm:h-10 lg:h-11"
@@ -181,7 +181,7 @@ export async function SiteFooter() {
               <span className="h-8 w-px bg-[var(--color-charcoal)]/20 sm:h-9" aria-hidden />
               <Image
                 src="/Hydrogen and carbon logo.png"
-                alt="SCoRe A⁺ Hydrogen and Carbon Center"
+                alt="SCoRe A⁺ Hydrogen and Carbon Centre"
                 width={700}
                 height={105}
                 className="h-9 w-auto object-contain sm:h-10"

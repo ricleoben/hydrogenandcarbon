@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hydrogenandcarbon.at"),
   title: "SCoRe A⁺ Hydrogen and Carbon",
   description:
-    "Standalone website for the SCoRe A⁺ Hydrogen and Carbon Center at Montanuniversitaet Leoben.",
+    "Standalone website for the SCoRe A⁺ Hydrogen and Carbon Centre at Montanuniversitaet Leoben.",
 };
 
 export default async function RootLayout({
@@ -35,7 +35,7 @@ export default async function RootLayout({
       lang={locale}
       suppressHydrationWarning
       className={`${inter.variable} ${manrope.variable} h-full scroll-smooth`}
-      data-scroll-behavior="smooth"
+      data-scroll-behaviour="smooth"
     >
       <body suppressHydrationWarning className="min-h-full bg-[var(--color-bg)] text-[var(--color-charcoal)] antialiased">
         <LanguageProvider initialLocale={locale}>

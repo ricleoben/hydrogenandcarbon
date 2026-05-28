@@ -4,6 +4,8 @@ import { SectionIntro } from "@/components/sections";
 import { getCommonUi } from "@/data/translations/common";
 import { getPublicationUi } from "@/data/translations/publications";
 import { getPublicationPosterById } from "@/data/h2c-publications";
+import { getRelatedResearchId } from "@/data/h2c-research";
+import { getPublicationThesisById } from "@/data/h2c-theses";
 import { getLocale } from "@/lib/server-i18n";
 
 type PosterDetailPageProps = {
@@ -24,6 +26,8 @@ export default async function PosterDetailPage({ params }: PosterDetailPageProps
   const encodedPdfPath = encodeURI(poster.pdfPath);
   const posterViewUrl = encodedPdfPath;
   const downloadFileName = poster.pdfPath.split("/").pop() ?? "poster.pdf";
+  const thesis = getPublicationThesisById(id);
+  const relatedResearchId = getRelatedResearchId(id);
 
   return (
     <>
@@ -61,6 +65,47 @@ export default async function PosterDetailPage({ params }: PosterDetailPageProps
               className="h-[78vh] min-h-[620px] w-full"
             />
           </div>
+
+          {(thesis || relatedResearchId) && (
+            <div className="mt-6 space-y-4 border-t border-[rgba(56,56,55,0.12)] pt-6">
+              {thesis && (
+                <div>
+                  <h2 className="text-lg font-semibold tracking-tight text-[var(--color-teal)]">{ui.relatedThesis}</h2>
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+                    {thesis.author ? (
+                      <>
+                        <strong>{thesis.author}:</strong> {thesis.title}
+                      </>
+                    ) : (
+                      thesis.title
+                    )}
+                  </p>
+                  <a
+                    href={thesis.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  >
+                    {ui.viewOnPure}
+                  </a>
+                </div>
+              )}
+
+              {relatedResearchId && (
+                <div>
+                  <h2 className="text-lg font-semibold tracking-tight text-[var(--color-teal)]">
+                    {ui.relatedResearchProject}
+                  </h2>
+                  <Link
+                    href={`/research/${relatedResearchId}`}
+                    className="mt-2 inline-flex text-sm font-semibold text-[var(--color-teal)] underline-offset-2 hover:underline"
+                  >
+                    {ui.learnMore}
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </>

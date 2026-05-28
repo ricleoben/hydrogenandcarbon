@@ -74,12 +74,12 @@ export const h2cResearchItems: H2CResearchItem[] = [
     end: "03/2024",
     summary:
       "Catalytic alloy development for methane decomposition in molten metal baths with reduced energy demand.",
-    candidateInfo: "Metallurgy PhD researcher focused on molten-metal methane pyrolysis and catalyst behavior.",
+    candidateInfo: "Metallurgy PhD researcher focused on molten-metal methane pyrolysis and catalyst behaviour.",
     supervisors: ["Univ.-Prof. Helmut Antrekowitsch", "Univ.-Prof. Johannes Schenk"],
     targets: [
       "Develop knowledge of metal catalysts for CH4 decomposition in molten metals.",
       "Design alloy compositions for methane pyrolysis with minimal specific energy consumption.",
-      "Enable low-CO2 hydrogen production and characterize resulting hydrogen and carbon quality.",
+      "Enable low-CO2 hydrogen production and characterise resulting hydrogen and carbon quality.",
     ],
     milestones: [
       "First selection of feasible alloy systems completed.",
@@ -105,28 +105,28 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Nonferrous Metallurgy",
     start: "03/2021",
     end: "02/2024",
-    summary: "Optimization and upscaling of molten metal bubble-column reactors for methane pyrolysis.",
+    summary: "Optimisation and upscaling of molten metal bubble-column reactors for methane pyrolysis.",
     candidateInfo: "PhD candidate in metallurgy and process engineering with industrial internships in metallurgical systems.",
     supervisors: ["Univ.-Prof. Helmut Antrekowitsch", "Univ.-Prof. Johannes Schenk"],
     targets: [
-      "Optimize and upscale existing molten metal bubble column reactors.",
+      "Optimise and upscale existing molten metal bubble column reactors.",
       "Develop continuous carbon discharge and improved gas injection concepts.",
       "Determine effects of process conditions on product quality.",
     ],
     milestones: [
-      "Influence of carbon cover layers on process behavior evaluated.",
+      "Influence of carbon cover layers on process behaviour evaluated.",
       "Influence of liquid metal bath height on methane conversion investigated.",
       "Input gas preheating and bottom gas injection implemented.",
     ],
     workpackages: [
-      "Optimization of 0.25 dm3 reactor.",
+      "Optimisation of 0.25 dm3 reactor.",
       "Upscaling to 1.5 dm3 and experimental studies.",
       "Upscaling to 3 dm3 and experimental studies.",
       "FTIR-based product gas analysis.",
     ],
     context: [
       "Contributes to methane pyrolysis scale-up for sustainable hydrogen and carbon production.",
-      "Supports carbon and gas characterization collaboration across MUL chairs.",
+      "Supports carbon and gas characterisation collaboration across MUL chairs.",
     ],
   },
   {
@@ -141,8 +141,8 @@ export const h2cResearchItems: H2CResearchItem[] = [
     candidateInfo: "PhD researcher in process technology focused on simulation of reactive bubble flows and scale-up.",
     supervisors: ["Ao.Univ.-Prof. Clemens Brand", "Univ.-Prof. Markus Lehner"],
     targets: [
-      "Optimize total methane pyrolysis process in liquid metal baths.",
-      "Simulate coupled bubble flow and reaction behavior.",
+      "Optimise total methane pyrolysis process in liquid metal baths.",
+      "Simulate coupled bubble flow and reaction behaviour.",
       "Generate fundamental scale-up knowledge for bubble-column reactors.",
     ],
     milestones: [
@@ -169,10 +169,10 @@ export const h2cResearchItems: H2CResearchItem[] = [
     start: "05/2021",
     end: "04/2024",
     summary: "Processing routes and quality engineering of pyrolytic carbon for marketable applications.",
-    candidateInfo: "Mineral processing researcher with focus on carbon beneficiation, surface control, and product valorization.",
+    candidateInfo: "Mineral processing researcher with focus on carbon beneficiation, surface control, and product valorisation.",
     supervisors: ["Univ.-Prof. Helmut Flachberger", "Univ.-Prof. Thomas Prohaska"],
     targets: [
-      "Characterize pyrolytic carbon with mineral-processing relevant parameters.",
+      "Characterise pyrolytic carbon with mineral-processing relevant parameters.",
       "Develop technology routes to marketable carbon products.",
       "Establish a database for carbon applications.",
     ],
@@ -182,12 +182,12 @@ export const h2cResearchItems: H2CResearchItem[] = [
     ],
     workpackages: [
       "Technology and market screening.",
-      "Carbon characterization methodology.",
+      "Carbon characterisation methodology.",
       "Laboratory beneficiation and quality tailoring.",
       "Application database development.",
     ],
     context: [
-      "Supports full carbon valorization from methane pyrolysis toward zero-waste technology.",
+      "Supports full carbon valorisation from methane pyrolysis toward zero-waste technology.",
     ],
   },
   {
@@ -211,13 +211,13 @@ export const h2cResearchItems: H2CResearchItem[] = [
       "Theoretical local-density model in nanoporous carbon available.",
     ],
     workpackages: [
-      "Carbon material characterization and selection.",
+      "Carbon material characterisation and selection.",
       "Low-pressure neutron scattering experiments.",
       "High-pressure neutron scattering experiments.",
       "Inelastic neutron studies and dissemination.",
     ],
     context: [
-      "Supports specific hydrogen storage applications through carbon design and characterization.",
+      "Supports specific hydrogen storage applications through carbon design and characterisation.",
     ],
   },
   {
@@ -228,7 +228,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Physical Metallurgy and Metallic Materials",
     start: "08/2021",
     end: "08/2024",
-    summary: "Atomistic modelling of geometry and functional groups to optimize storage in nanoporous carbon.",
+    summary: "Atomistic modelling of geometry and functional groups to optimise storage in nanoporous carbon.",
     candidateInfo: "Materials scientist with simulation focus, working on molecular and atomistic hydrogen storage models.",
     supervisors: ["Priv.-Doz. David Holec", "Assoc. Prof. Peter Puschnig"],
     targets: [
@@ -257,7 +257,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Functional Materials and Materials Systems",
     start: "06/2021",
     end: "05/2024",
-    summary: "Process technology and characterization for nanoparticle deposition on carbon for improved H2 storage.",
+    summary: "Process technology and characterisation for nanoparticle deposition on carbon for improved H2 storage.",
     candidateInfo: "Materials science PhD candidate focused on plasma-assisted functionalisation and storage performance.",
     supervisors: ["Univ.-Prof. Christian Mitterer", "Univ.-Prof. Oskar Paris"],
     targets: [
@@ -268,11 +268,11 @@ export const h2cResearchItems: H2CResearchItem[] = [
     milestones: [
       "Deposition know-how improved from Cu to Ag to Pt.",
       "Nanoparticle deposition recipes on nanoporous carbon implemented.",
-      "Deposition optimized with respect to storage performance.",
+      "Deposition optimised with respect to storage performance.",
     ],
     workpackages: [
       "Plasma-assisted nanoparticle deposition development.",
-      "Deposited nanoparticle characterization.",
+      "Deposited nanoparticle characterisation.",
       "Functionalisation of nanoporous carbon.",
       "Hydrogen storage capacity determination.",
     ],
@@ -288,12 +288,12 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Chemistry of Polymeric Materials",
     start: "10/2021",
     end: "09/2024",
-    summary: "Carbon composite development for smart building materials using activated and functionalized pyrolytic carbon.",
+    summary: "Carbon composite development for smart building materials using activated and functionalised pyrolytic carbon.",
     candidateInfo: "Chemical engineering researcher focusing on polymer-carbon systems and application-oriented material design.",
     supervisors: ["Univ.-Prof. Wolfgang Kern", "Univ.-Prof. Christian Mitterer"],
     targets: [
       "Surface activation of pyrolytic carbon.",
-      "Functionalization with organic groups (e.g., epoxy).",
+      "Functionalisation with organic groups (e.g., epoxy).",
       "Preparation and curing of carbon/binder composites.",
       "Validation as added-value building materials.",
     ],
@@ -310,7 +310,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
       "Composite preparation, curing, and application tests.",
     ],
     context: [
-      "Explores large-scale utilization pathways of pyrolytic carbon in building applications.",
+      "Explores large-scale utilisation pathways of pyrolytic carbon in building applications.",
     ],
   },
   {
@@ -321,23 +321,23 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of General and Analytical Chemistry",
     start: "08/2022",
     end: "07/2025",
-    summary: "Carbon characterization and agriculture-application modelling with process feedback to pyrolysis.",
+    summary: "Carbon characterisation and agriculture-application modelling with process feedback to pyrolysis.",
     candidateInfo: "Agricultural systems and agroecology specialist focusing on practical validation of carbon application effects.",
     supervisors: ["Priv.-Doz. Markus Puschenreiter", "Univ.-Prof. Thomas Prohaska"],
     targets: [
-      "Develop robust characterization methodology for pyrolytic carbon.",
+      "Develop robust characterisation methodology for pyrolytic carbon.",
       "Model and evaluate carbon applications in agriculture.",
       "Assess long-term stability in field-relevant systems.",
     ],
     milestones: [
-      "Fast and validated carbon characterization method available.",
-      "Pyrolysis process conditions optimized for carbon applications.",
+      "Fast and validated carbon characterisation method available.",
+      "Pyrolysis process conditions optimised for carbon applications.",
       "Quantified application effects for agriculture.",
       "Indicative long-term stability results obtained.",
     ],
     workpackages: [
       "Method development and validation.",
-      "Feedback loop from application to process optimization.",
+      "Feedback loop from application to process optimisation.",
       "Agriculture application effect evaluation.",
       "Isotope-based degradation studies.",
     ],
@@ -389,18 +389,18 @@ export const h2cResearchItems: H2CResearchItem[] = [
     supervisors: ["Univ.-Prof. Wolfgang Kern", "Ass.Prof. Gisbert Riess", "Univ.-Prof. Gregor Trimmel"],
     targets: [
       "Identify polymer structures suitable for chemical hydrogen storage.",
-      "Develop and characterize functional copolymers.",
+      "Develop and characterise functional copolymers.",
       "Demonstrate reversible hydrogen uptake and release.",
     ],
     milestones: [
       "Structural motifs identified and validated.",
       "Copolymer synthesis completed.",
-      "Uptake/release behavior characterized.",
+      "Uptake/release behaviour characterised.",
       "Lab-scale applicability demonstrated.",
     ],
     workpackages: [
       "Literature and motif screening.",
-      "Copolymer synthesis and physicochemical characterization.",
+      "Copolymer synthesis and physicochemical characterisation.",
       "Hydrogen uptake/release experiments.",
       "Application demonstration.",
     ],
@@ -417,7 +417,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
     start: "07/2021",
     end: "06/2024",
     summary: "Tank material and process development for low-pressure hydrogen storage applications.",
-    candidateInfo: "Polymer processing engineer experienced in material development, process optimization, and sensor integration.",
+    candidateInfo: "Polymer processing engineer experienced in material development, process optimisation, and sensor integration.",
     supervisors: ["Assoc. Prof. Thomas Lucyshyn"],
     targets: [
       "Develop suitable thermoplastics and process concepts for LOHC tanks.",
@@ -426,7 +426,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
     ],
     milestones: [
       "Suitable thermoplastics selected.",
-      "Long-term behavior characterized.",
+      "Long-term behaviour characterised.",
       "Pilot-scale tank manufactured.",
       "Final product evaluated for scale-up.",
     ],
@@ -453,8 +453,8 @@ export const h2cResearchItems: H2CResearchItem[] = [
     supervisors: ["Assoc. Prof. Daniel Kiener", "Univ.-Prof. Juergen Eckert", "Mag. Florian Spieckermann", "Ao.Univ.-Prof. Gregor Mori"],
     targets: [
       "Prepare suitable porous alloy systems for hydrogen storage.",
-      "Achieve stable long-term loading/unloading behavior.",
-      "Understand sorption behavior for material optimization.",
+      "Achieve stable long-term loading/unloading behaviour.",
+      "Understand sorption behaviour for material optimisation.",
     ],
     milestones: [
       "Nanoporous metals prepared by HPT.",
@@ -462,10 +462,10 @@ export const h2cResearchItems: H2CResearchItem[] = [
       "Fast and stable loading/unloading verified.",
     ],
     workpackages: [
-      "Alloy composition optimization (FeTi and HEAs).",
-      "Porous structure preparation and stabilization.",
-      "Microstructural and functional optimization.",
-      "Hydrogen sorption characterization.",
+      "Alloy composition optimisation (FeTi and HEAs).",
+      "Porous structure preparation and stabilisation.",
+      "Microstructural and functional optimisation.",
+      "Hydrogen sorption characterisation.",
     ],
     context: [
       "Contributes to safe stationary hydrogen storage with a focus on long-term stability and recyclability.",
@@ -485,16 +485,16 @@ export const h2cResearchItems: H2CResearchItem[] = [
     targets: [
       "Understand interaction mechanisms of hydrogen with cement systems.",
       "Assess role of porosity, permeability, capillarity, and saturation.",
-      "Validate hydrogen-cement interaction behavior experimentally.",
+      "Validate hydrogen-cement interaction behaviour experimentally.",
     ],
     milestones: [
-      "Methodology for cement characterization established.",
+      "Methodology for cement characterisation established.",
       "Additive effects on cement properties clarified.",
       "Hydrogen interaction effects validated for dry and saturated cements.",
     ],
     workpackages: [
       "Literature and cement-type selection.",
-      "Property characterization and additive studies.",
+      "Property characterisation and additive studies.",
       "Thermodynamic modelling of hydrated cement-hydrogen systems.",
       "Autoclave experiments and saturation influence evaluation.",
     ],
@@ -510,7 +510,7 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Petroleum Geology",
     start: "06/2021",
     end: "05/2024",
-    summary: "Caprock integrity and geomechanical behavior under hydrogen storage conditions.",
+    summary: "Caprock integrity and geomechanical behaviour under hydrogen storage conditions.",
     candidateInfo: "Geologist with extensive field and industry experience in sedimentary systems and subsurface risk contexts.",
     supervisors: ["Priv.-Doz. David Misch", "Univ.-Prof. Reinhard Sachsenhofer", "Assoc. Prof. Daniel Kiener"],
     targets: [
@@ -572,23 +572,23 @@ export const h2cResearchItems: H2CResearchItem[] = [
     chair: "Chair of Physical Chemistry",
     start: "07/2021",
     end: "06/2024",
-    summary: "SOEC material and design optimization for efficient, stable hydrogen production.",
+    summary: "SOEC material and design optimisation for efficient, stable hydrogen production.",
     candidateInfo: "Industrial energy engineering researcher focused on solid oxide electrolysis material chemistry and performance.",
     supervisors: ["Priv.-Doz. Roland Brunner", "Assoc. Prof. Edith Bucher"],
     targets: [
-      "Synthesize and characterize novel SOEC anode materials.",
+      "Synthesise and characterise novel SOEC anode materials.",
       "Understand material-morphology-electrochemistry relations.",
       "Develop long-term stable, high-performance SOEC design concepts.",
     ],
     milestones: [
-      "Electrochemical characterization of first SOEC with novel anode completed.",
-      "Comprehensive characterization of novel anode material completed.",
-      "Enhanced morphology SOEC characterized.",
+      "Electrochemical characterisation of first SOEC with novel anode completed.",
+      "Comprehensive characterisation of novel anode material completed.",
+      "Enhanced morphology SOEC characterised.",
       "Improved long-term SOEC performance demonstrated.",
     ],
     workpackages: [
-      "Literature review and benchmark characterization.",
-      "Anode material synthesis and characterization.",
+      "Literature review and benchmark characterisation.",
+      "Anode material synthesis and characterisation.",
       "Porous electrode/cell preparation and testing.",
       "Structure-property investigation and design guideline development.",
       "Dissemination and thesis integration.",
@@ -606,23 +606,23 @@ export const h2cResearchItems: H2CResearchItem[] = [
     start: "06/2021",
     end: "05/2024",
     summary: "High-entropy electrode design for efficient electrochemical water splitting.",
-    candidateInfo: "Advanced materials researcher working on microstructure and chemistry optimization in water-splitting electrodes.",
+    candidateInfo: "Advanced materials researcher working on microstructure and chemistry optimisation in water-splitting electrodes.",
     supervisors: ["Univ.-Prof. Juergen Eckert", "Dr. Christoph Gammer", "Univ.-Prof. Werner Sitte"],
     targets: [
       "Understand microstructure and chemistry effects on water splitting efficiency.",
-      "Optimize HEA composition and production technologies.",
+      "Optimise HEA composition and production technologies.",
       "Enable upscaling-relevant data generation for electrode systems.",
     ],
     milestones: [
-      "HEA electrode preparation route optimized.",
+      "HEA electrode preparation route optimised.",
       "Microstructure and chemistry influence evaluated.",
       "Upscaling-relevant dissemination data package available.",
     ],
     workpackages: [
-      "HEA composition optimization.",
+      "HEA composition optimisation.",
       "Lab-scale HEA electrode production.",
       "Multi-scale microstructural investigations.",
-      "Electrochemical characterization.",
+      "Electrochemical characterisation.",
     ],
     context: [
       "Supports efficient hydrogen production from widely available materials.",
@@ -678,7 +678,7 @@ export const researchToPublicationMap: Record<string, string> = {
   "gerald-processing-carbon": "hartig-processing-carbon",
   "sebastian-storage-mechanisms": "stock-sans-h2",
   "thomas-leiner-functionalisation": "leiner-interplay",
-  "florian-nanoporous-functionalisation": "knabl-functionalization-nanoporous",
+  "florian-nanoporous-functionalisation": "knabl-functionalisation-nanoporous",
   "lucija-building-carbon": "pustahija-surface-modification",
   "matthias-embrittlement": "eichinger-embrittlement",
   "sharifian-polymer-storage": "sharifian-polymer-carriers",
@@ -694,4 +694,8 @@ export const researchToPublicationMap: Record<string, string> = {
 
 export function getRelatedPublicationId(researchId: string): string | undefined {
   return researchToPublicationMap[researchId];
+}
+
+export function getRelatedResearchId(publicationId: string): string | undefined {
+  return Object.entries(researchToPublicationMap).find(([, posterId]) => posterId === publicationId)?.[0];
 }

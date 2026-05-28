@@ -30,15 +30,15 @@ const homeContent = {
     },
     about: {
       eyebrow: "About",
-      title: "SCoRe A⁺ Hydrogen and Carbon Center",
+      title: "SCoRe A⁺ Hydrogen and Carbon Centre",
       description:
-        "Since 2020, Montanuniversität Leoben has bundled interdisciplinary research in the strategic core research area SCoRe A⁺ Hydrogen and Carbon, connecting around 150 researchers from 26 organizational units across the full value chain.",
+        "Since 2020, Montanuniversität Leoben has bundled interdisciplinary research in the strategic core research area SCoRe A⁺ Hydrogen and Carbon, connecting around 150 researchers from 26 organisational units across the full value chain.",
     },
     strategy: {
       eyebrow: "Strategy",
       title: "Integrated hydrogen and carbon research, from lab to pilot scale.",
       introCards: [
-        "Around 150 researchers from 26 organizational units work along the full value chain — from low-emission production and storage to transport, industrial use and circular carbon applications.",
+        "Around 150 researchers from 26 organisational units work along the full value chain — from low-emission production and storage to transport, industrial use and circular carbon applications.",
         "The network is strengthened through close partnerships with industry and research institutions, increasing national and international visibility while accelerating practical, scalable solutions.",
         "SCoRe A⁺ is designed as an implementation-oriented platform: scientific excellence, pilot-scale validation and real-world application pathways are developed together to support climate-neutral industry.",
       ],
@@ -75,9 +75,9 @@ const homeContent = {
     },
     researchFocus: {
       eyebrow: "Research Focus",
-      title: "Four streams, one integrated value chain.",
+      title: "Four pillars, one integrated value cycle.",
       description:
-        "From low-emission hydrogen production to high-value circular carbon use, every research stream connects to the others — supported by an outdoor education program that brings the science to society.",
+        "From low-emission hydrogen production to high-value circular carbon use, every research stream connects to the others — supported by an outdoor education programme that brings the science to society.",
       researchCentreImageAlt: "Research Centre for Hydrogen and Carbon",
       coreTechnology: {
         eyebrow: "Core Technology",
@@ -121,7 +121,7 @@ const homeContent = {
         items: [
           "MOSA (Montanuni Outdoor Science Activities)",
           "SAFE (Science Activities for Everyone) Living Lab",
-          "School and educator programs",
+          "School and educator programmes",
           "Collaborative industry formats",
         ],
       },
@@ -142,7 +142,7 @@ const homeContent = {
           icon: "group" as IconName,
           value: "26",
           label: "Chairs",
-          description: "Organizational units of Montanuniversität Leoben contributing to the program.",
+          description: "Organisational units of Montanuniversität Leoben contributing to the programme.",
         },
         {
           icon: "target" as IconName,
@@ -154,12 +154,12 @@ const homeContent = {
           icon: "coin" as IconName,
           value: "EUR 28M",
           label: "Investments",
-          description: "Cumulative project-related funding committed to the program.",
+          description: "Cumulative project-related funding committed to the programme.",
         },
         {
           icon: "house" as IconName,
           value: "750 m²",
-          label: "Research Center",
+          label: "Research Centre",
           description: "New pilot-scale infrastructure in Leoben-Leitendorf opened in autumn 2024.",
         },
         {
@@ -234,7 +234,7 @@ const homeContent = {
       ],
       callouts: [
         {
-          value: "80%+",
+          value: "80%>",
           text: "of global energy demand is currently met by fossil fuels (coal, oil and natural gas).",
         },
         {
@@ -242,7 +242,7 @@ const homeContent = {
           text: "emissions are the main cause of global warming due to the anthropogenic greenhouse effect.",
         },
         {
-          value: "→ 0",
+          value: "↓ emission",
           text: "Decarbonisation of fossil fuels can make a significant contribution to a stable, sustainable energy supply while reducing CO₂ emissions.",
         },
       ],
@@ -268,8 +268,8 @@ const homeContent = {
       ],
       diagramAlt: "Pyrolysis system process diagram",
       sourceLabel: "Source:",
-      sourceLinkText: "www.gas.info/…/methan-pyrolyse",
-      sourceUrl: "https://www.gas.info/energietraeger-wasserstoff/erzeugung-von-wasserstoff/methan-pyrolyse",
+      sourceLinkText: "https://gas-h2.de/",
+      sourceUrl: "https://gas-h2.de/",
       sourceAdapted: "adapted",
     },
     whyMethanePyrolysis: {
@@ -317,7 +317,7 @@ const homeContent = {
           "Medium and long-term humus build-up results in climate-fit and resilient soils.",
         ],
         closingParagraph:
-          "Carbon can also be used as a fertilizer by mixing it with organic residues such as liquid manure, compost and dung or by activating it with soil/microorganisms.",
+          "Carbon can also be used as a fertiliser by mixing it with organic residues such as liquid manure, compost and dung or by activating it with soil/microorganisms.",
         imageAlt: "Carbon in agriculture",
       },
       buildingMaterials: {
@@ -408,7 +408,7 @@ const homeContent = {
     },
     researchFocus: {
       eyebrow: "Forschungsschwerpunkte",
-      title: "Vier Stränge, eine integrierte Wertschöpfungskette.",
+      title: "Vier Säulen, ein integrierter Wertkreislauf.",
       description:
         "Von der emissionsarmen Wasserstoffproduktion bis zur hochwertigen zirkulären Kohlenstoffnutzung — jeder Forschungsstrang ist mit den anderen verbunden, unterstützt durch ein Outdoor-Bildungsprogramm, das die Wissenschaft in die Gesellschaft trägt.",
       researchCentreImageAlt: "Forschungszentrum für Wasserstoff und Kohlenstoff",
@@ -569,7 +569,7 @@ const homeContent = {
       ],
       callouts: [
         {
-          value: "80%+",
+          value: "80%>",
           text: "des globalen Energiebedarfs werden derzeit durch fossile Brennstoffe (Kohle, Öl und Erdgas) gedeckt.",
         },
         {
@@ -577,7 +577,7 @@ const homeContent = {
           text: "Emissionen sind die Hauptursache der globalen Erwärmung durch den anthropogenen Treibhauseffekt.",
         },
         {
-          value: "→ 0",
+          value: "↓ Emissionen",
           text: "Die Dekarbonisierung fossiler Brennstoffe kann einen wesentlichen Beitrag zu einer stabilen, nachhaltigen Energieversorgung bei gleichzeitiger Senkung der CO₂-Emissionen leisten.",
         },
       ],
@@ -603,8 +603,8 @@ const homeContent = {
       ],
       diagramAlt: "Prozessdiagramm des Pyrolyse-Systems",
       sourceLabel: "Quelle:",
-      sourceLinkText: "www.gas.info/…/methan-pyrolyse",
-      sourceUrl: "https://www.gas.info/energietraeger-wasserstoff/erzeugung-von-wasserstoff/methan-pyrolyse",
+      sourceLinkText: "https://gas-h2.de/",
+      sourceUrl: "https://gas-h2.de/",
       sourceAdapted: "angepasst",
     },
     whyMethanePyrolysis: {

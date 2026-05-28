@@ -172,7 +172,7 @@ export const h2cPublicationPosters: H2CPublicationPoster[] = [
   },
   {
     id: "leiner-interplay",
-    title: "Interplay between Carbon Structures and their Surface Functionalization for Improved Hydrogen Storage",
+    title: "Interplay between Carbon Structures and their Surface Functionalisation for Improved Hydrogen Storage",
     authors: "Leiner, T.",
     category: "Carbon and its Applications",
     page: 35,
@@ -187,11 +187,11 @@ export const h2cPublicationPosters: H2CPublicationPoster[] = [
     pdfPath: "/posters/In situ SAXS and SANS on .pdf",
   },
   {
-    id: "knabl-functionalization-nanoporous",
-    title: "Functionalization of Nanoporous Carbons",
+    id: "knabl-functionalisation-nanoporous",
+    title: "Functionalisation of Nanoporous Carbons",
     authors: "Knabl, F.; Kostoglou, N.; Bandl, C.; Tkadletz, M.; Grießer, T.; Mitterer, C.",
     category: "Carbon and its Applications",
-    pdfPath: "/posters/Functionalization of Nanoporous Carbons.pdf",
+    pdfPath: "/posters/Functionalisation of Nanoporous Carbons.pdf",
   },
   {
     id: "stock-gas-sorption-analysis",
@@ -202,7 +202,7 @@ export const h2cPublicationPosters: H2CPublicationPoster[] = [
   },
   {
     id: "rollenitz-modified-pechini",
-    title: "Modified Pechini Synthesis of Perovskite-type Oxide Catalysts for CO2 Utilization",
+    title: "Modified Pechini Synthesis of Perovskite-type Oxide Catalysts for CO2 Utilisation",
     authors: "Rollenitz, J.; Drexler, H.; Schrenk, F.; Rameshan, C.",
     category: "Hydrogen Storage, Transport, and Application",
     pdfPath: "/posters/Modified pechini synthesis of perovskite.pdf",

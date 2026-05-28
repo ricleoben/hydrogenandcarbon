@@ -13,7 +13,7 @@ const mosaContent = {
       paragraphs: [
         "MOSA is not only a circular-economy information format. It is a guided, station-based learning experience where school groups, educators, and visitors explore how energy, resources, biodiversity, soil health, and carbon applications are connected in real systems.",
         "Installed at the premises of the Research Centre for Hydrogen and Carbon at Montanuniversitaet Leoben, MOSA translates current research into understandable activities that combine demonstration, experimentation, and participation.",
-        "The didactic design follows a clear narrative logic: participants move through stations with age-adapted, color-coded modules and interact with real experiments, materials, and landscape elements.",
+        "The didactic design follows a clear narrative logic: participants move through stations with age-adapted, colour-coded modules and interact with real experiments, materials, and landscape elements.",
       ],
     },
     video: {
@@ -26,7 +26,7 @@ const mosaContent = {
       description:
         "MOSA gives primary and lower-secondary school students a structured way to learn through direct experience. Instead of only listening in a classroom, children move through guided stations where they observe, test, discuss, and reflect with trained Ambassadors.",
       bullets: [
-        "Age-adapted, color-coded activities for primary and secondary education groups.",
+        "Age-adapted, colour-coded activities for primary and secondary education groups.",
         "Hands-on experiments on energy, resources, biodiversity, and carbon applications.",
         "2 to 4 hour workshop formats that combine action, teamwork, and scientific thinking.",
         "A safe outdoor setting where curiosity grows into understanding and practical skills.",
@@ -49,9 +49,9 @@ const mosaContent = {
       ],
     },
     programQuality: {
-      sectionLabel: "Program Quality and Learning Standards",
+      sectionLabel: "Programme Quality and Learning Standards",
       bullets: [
-        "Circular economy topics are communicated through a sequential, color-coded narrative adapted to age groups from primary to secondary school level.",
+        "Circular economy topics are communicated through a sequential, colour-coded narrative adapted to age groups from primary to secondary school level.",
         "Workshops are led by trained Ambassadors and can be adapted to 2-4 hour formats, depending on the target group.",
         "Mobile teaching and learning materials ensure continuity of educational activities under different weather conditions.",
         "Methods are designed for active interaction and holistic learning, involving observation, experimentation, and multisensory engagement.",

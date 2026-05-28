@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { ContentImage } from "@/components/content-image";
 import {
+  HeroPageSection,
   HeroPill,
+  HeroSliderBackground,
   HeroTextPanel,
-  heroDescriptionClassName,
-  heroDesktopGradientClassName,
-  heroMobileScrimClassName,
-  heroTitleClassName,
+  heroHomeDescriptionClassName,
+  heroHomeTitleClassName,
 } from "@/components/hero-text-panel";
 import { useLanguage } from "@/components/language-provider";
 import { getCommonUi } from "@/data/translations/common";
@@ -33,35 +33,13 @@ export default function HydrogenAndCarbonMosaPage() {
 
   return (
     <>
-      <section className="relative min-h-[360px] overflow-hidden sm:min-h-[440px] lg:min-h-[620px]" data-no-watermark>
-        <div className="absolute inset-0 min-h-[380px] sm:min-h-[440px] lg:min-h-[620px]">
-          <div className="hero-side-track flex h-full min-h-[inherit]">
-            {mosaHeroSliderImages.map((image, index) => (
-              <div key={`${image}-${index}`} className="hero-side-slide-item relative h-full min-h-[inherit]">
-                <ContentImage
-                  src={image}
-                  alt=""
-                  aria-hidden
-                  fill
-                  className="object-cover object-center"
-                  data-no-watermark
-                />
-              </div>
-            ))}
-          </div>
-          <div className={heroMobileScrimClassName()} />
-          <div className={heroDesktopGradientClassName()} />
-          <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(circle_at_bottom_right,_rgba(0,114,125,0.38),_transparent_42%)] sm:block" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-10 sm:pb-12 lg:px-16">
-          <HeroTextPanel className="max-w-3xl">
-            <HeroPill>{t.hero.pill}</HeroPill>
-            <h1 className={heroTitleClassName()}>{t.hero.title}</h1>
-            <p className={heroDescriptionClassName()}>{t.hero.description}</p>
-          </HeroTextPanel>
-        </div>
-      </section>
+      <HeroPageSection background={<HeroSliderBackground images={mosaHeroSliderImages} />}>
+        <HeroTextPanel className="max-w-3xl pb-4 text-white">
+          <HeroPill>{t.hero.pill}</HeroPill>
+          <h1 className={heroHomeTitleClassName()}>{t.hero.title}</h1>
+          <p className={heroHomeDescriptionClassName()}>{t.hero.description}</p>
+        </HeroTextPanel>
+      </HeroPageSection>
 
       <section className="px-4 pt-10 pb-12 sm:px-10 sm:pt-14 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">

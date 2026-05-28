@@ -80,36 +80,45 @@ section {
   backdrop-filter: blur(18px);
 }
 
+/* Six panels: five slides plus a duplicate of the first for a seamless loop */
 .hero-side-track {
-  width: 500%;
-  animation: hero-side-slide 20s linear infinite;
+  width: 600%;
+  animation: hero-side-slide 24s linear infinite;
   will-change: transform;
 }
 
 .hero-side-slide-item {
-  width: 20%;
-  flex: 0 0 20%;
+  width: calc(100% / 6);
+  flex: 0 0 calc(100% / 6);
 }
 
 @keyframes hero-side-slide {
   0%,
-  22% {
+  16% {
     transform: translateX(0);
   }
-  25%,
-  47% {
-    transform: translateX(-20%);
+  18%,
+  34% {
+    transform: translateX(-16.6667%);
   }
-  50%,
-  72% {
-    transform: translateX(-40%);
+  36%,
+  52% {
+    transform: translateX(-33.3333%);
   }
-  75%,
-  97% {
-    transform: translateX(-60%);
+  54%,
+  70% {
+    transform: translateX(-50%);
+  }
+  72%,
+  88% {
+    transform: translateX(-66.6667%);
+  }
+  90%,
+  98% {
+    transform: translateX(-83.3333%);
   }
   100% {
-    transform: translateX(-80%);
+    transform: translateX(0);
   }
 }
 
