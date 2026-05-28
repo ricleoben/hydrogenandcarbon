@@ -635,25 +635,27 @@ export function HomePageContent() {
                   {t.carbonApplicationsSection.agriculture.closingParagraph}
                 </p>
               </article>
-              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:h-auto">
+              <div className="relative min-h-[240px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:h-full lg:min-h-0">
                 <ContentImage
                   src="/carbon_in_agriculture.png"
                   alt={t.carbonApplicationsSection.agriculture.imageAlt}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={92}
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                 />
               </div>
             </div>
 
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-              <div className="relative min-h-[220px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:order-first lg:h-auto">
+              <div className="relative min-h-[240px] overflow-hidden rounded-[1.5rem] editorial-shadow sm:min-h-[280px] lg:order-first lg:h-full lg:min-h-0">
                 <ContentImage
                   src="/carbon_in_building_materials.png"
                   alt={t.carbonApplicationsSection.buildingMaterials.imageAlt}
                   fill
+                  quality={92}
                   className="object-cover object-[center_35%]"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                 />
               </div>
               <article className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-6 text-white editorial-shadow sm:p-7">

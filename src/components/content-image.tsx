@@ -10,7 +10,8 @@ type ContentImageProps = {
   sizes?: string;
   priority?: boolean;
   unoptimized?: boolean;
-} & Omit<ImageProps, "src" | "alt" | "fill" | "width" | "height" | "sizes" | "priority" | "unoptimized">;
+  quality?: number;
+} & Omit<ImageProps, "src" | "alt" | "fill" | "width" | "height" | "sizes" | "priority" | "unoptimized" | "quality">;
 
 export function ContentImage({
   src,
@@ -22,6 +23,7 @@ export function ContentImage({
   sizes,
   priority,
   unoptimized,
+  quality,
   ...rest
 }: ContentImageProps) {
   const isGif = src.toLowerCase().includes(".gif");
@@ -35,6 +37,7 @@ export function ContentImage({
         className={className}
         sizes={sizes ?? "100vw"}
         priority={priority}
+        quality={quality}
         unoptimized={unoptimized ?? isGif}
         {...rest}
       />
@@ -50,6 +53,7 @@ export function ContentImage({
       className={className}
       sizes={sizes ?? "100vw"}
       priority={priority}
+      quality={quality}
       unoptimized={unoptimized ?? isGif}
       {...rest}
     />
