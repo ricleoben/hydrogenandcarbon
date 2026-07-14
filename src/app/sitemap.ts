@@ -8,6 +8,9 @@ const routes = [
   "/team",
   "/safe",
   "/mosa",
+  "/mosa/teachers",
+  "/mosa/municipalities",
+  "/mosa/associations",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
