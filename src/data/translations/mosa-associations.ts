@@ -32,7 +32,7 @@ const mosaAssociationsContent = {
           step: "Step 2",
           title: "Plan together",
           description:
-            "We align the Energiepfad route and station focus to your members' interests and age range. You receive practical information on arrival, safety, and what participants should bring.",
+            "We align the Energy Path route and station focus to your members' interests and age range. You receive practical information on arrival, safety, and what participants should bring.",
         },
         {
           step: "Step 3",
@@ -76,7 +76,7 @@ const mosaAssociationsContent = {
       ],
       noteTitle: "Before you book",
       noteItems: [
-        "Workshop formats typically run 2–4 hours depending on group size, age range, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+        "Workshop formats typically run 2–4 hours depending on group size, age range, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         "Outdoor activities — weather-appropriate clothing is required",
         "Mobile learning materials support programmes in varying conditions",
         "Final dates and group sizes are confirmed individually with the MOSA team",
@@ -94,7 +94,7 @@ const mosaAssociationsContent = {
         {
           question: "How long does a MOSA visit take?",
           answer:
-            "Workshop formats typically run 2–4 hours depending on group size, age range, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+            "Workshop formats typically run 2–4 hours depending on group size, age range, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         },
         {
           question: "Can we bring mixed-age member groups?",
@@ -114,7 +114,7 @@ const mosaAssociationsContent = {
         {
           question: "Where does MOSA take place?",
           answer:
-            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energiepfad is an outdoor station route on the research centre premises.",
+            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energy Path is an outdoor station route on the research centre premises.",
         },
       ],
     },

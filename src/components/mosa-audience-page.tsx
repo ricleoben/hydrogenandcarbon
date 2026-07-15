@@ -9,6 +9,7 @@ import {
   heroHomeDescriptionClassName,
   heroHomeTitleClassName,
 } from "@/components/hero-text-panel";
+import { MosaThematicAreasDiagram } from "@/components/mosa-thematic-areas-diagram";
 import type { MosaAudienceTranslations } from "@/data/translations/mosa-audience";
 
 const CONTACT_EMAIL = "ric-leoben@unileoben.ac.at";
@@ -70,6 +71,8 @@ export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
               </p>
             ))}
           </article>
+
+          <MosaThematicAreasDiagram />
 
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">

@@ -9,7 +9,7 @@ const mosaTeachersContent = {
       pill: "For Educators",
       title: "How can MOSA add value to your teaching?",
       description:
-        "Discover how the Energiepfad turns energy, biodiversity, and carbon topics into guided outdoor learning — with trained Ambassadors supporting your class every step of the way.",
+        "Discover how the Energy Path turns energy, biodiversity, and carbon topics into guided outdoor learning — with trained Ambassadors supporting your class every step of the way.",
     },
     intro: {
       title: "Built for teachers who want more than a classroom talk",
@@ -32,7 +32,7 @@ const mosaTeachersContent = {
           step: "Step 2",
           title: "Plan together",
           description:
-            "We align the Energiepfad route and station focus to your students' age and curriculum. You receive practical information on arrival, safety, and what students should bring.",
+            "We align the Energy Path route and station focus to your students' age and curriculum. You receive practical information on arrival, safety, and what students should bring.",
         },
         {
           step: "Step 3",
@@ -76,7 +76,7 @@ const mosaTeachersContent = {
       ],
       noteTitle: "Before you book",
       noteItems: [
-        "Workshop formats typically run 2–4 hours depending on your group size, age level, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+        "Workshop formats typically run 2–4 hours depending on your group size, age level, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         "Outdoor activities — weather-appropriate clothing is required",
         "Mobile learning materials support programmes in varying conditions",
         "Final dates and group sizes are confirmed individually with the MOSA team",
@@ -89,7 +89,7 @@ const mosaTeachersContent = {
         {
           question: "How long does a MOSA visit take?",
           answer:
-            "Workshop formats typically run 2–4 hours depending on your group size, age level, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+            "Workshop formats typically run 2–4 hours depending on your group size, age level, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         },
         {
           question: "Which age groups can participate?",
@@ -119,7 +119,7 @@ const mosaTeachersContent = {
         {
           question: "Where does MOSA take place?",
           answer:
-            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energiepfad is an outdoor station route on the research centre premises.",
+            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energy Path is an outdoor station route on the research centre premises.",
         },
       ],
     },

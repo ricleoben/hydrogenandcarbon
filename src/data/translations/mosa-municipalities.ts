@@ -32,7 +32,7 @@ const mosaMunicipalitiesContent = {
           step: "Step 2",
           title: "Plan together",
           description:
-            "We align the Energiepfad route and station focus to your audience — families, youth groups, school classes, or mixed public events — and share practical information on access and logistics.",
+            "We align the Energy Path route and station focus to your audience — families, youth groups, school classes, or mixed public events — and share practical information on access and logistics.",
         },
         {
           step: "Step 3",
@@ -76,7 +76,7 @@ const mosaMunicipalitiesContent = {
       ],
       noteTitle: "Before you book",
       noteItems: [
-        "Formats typically run 2–4 hours depending on audience, group size, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+        "Formats typically run 2–4 hours depending on audience, group size, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         "Participation terms are discussed individually when you enquire",
         "Outdoor activities — weather-appropriate clothing is required",
         "Mobile learning materials support programmes in varying conditions",
@@ -90,12 +90,12 @@ const mosaMunicipalitiesContent = {
         {
           question: "What kinds of municipal events can MOSA support?",
           answer:
-            "MOSA can support school visits, public learning days, family formats, and community sustainability events. We tailor the Energiepfad route and station focus to your audience and time frame.",
+            "MOSA can support school visits, public learning days, family formats, and community sustainability events. We tailor the Energy Path route and station focus to your audience and time frame.",
         },
         {
           question: "How long does a visit or event take?",
           answer:
-            "Formats typically run 2–4 hours depending on audience, group size, and how many stations you cover. We recommend planning at least half a day for the full Energiepfad experience.",
+            "Formats typically run 2–4 hours depending on audience, group size, and how many stations you cover. We recommend planning at least half a day for the full Energy Path experience.",
         },
         {
           question: "Can we combine MOSA with other local initiatives?",
@@ -115,7 +115,7 @@ const mosaMunicipalitiesContent = {
         {
           question: "Where does MOSA take place?",
           answer:
-            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energiepfad is an outdoor station route on the research centre premises.",
+            "At the Research Centre for Hydrogen and Carbon, Montanuniversitaet Leoben — Dorfstrasse 1, Leitendorf, 8700 Leoben. The Energy Path is an outdoor station route on the research centre premises.",
         },
       ],
     },

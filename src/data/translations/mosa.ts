@@ -6,7 +6,7 @@ const mosaContent = {
       pill: "MOSA",
       title: "MOSA - Montanuni Outdoor Science Activities",
       description:
-        "An interactive learning environment at the Research Centre for Hydrogen and Carbon where visitors follow the Energiepfad through six connected stations — from biodiversity meadows to energy labs and carbon innovation.",
+        "An interactive learning environment at the Research Centre for Hydrogen and Carbon where visitors follow the Energy Path through six connected stations — from biodiversity meadows to energy labs and carbon innovation.",
     },
     intro: {
       title: "How MOSA turns science into hands-on learning",
@@ -84,10 +84,10 @@ const mosaContent = {
       ],
     },
     energiepfad: {
-      sectionLabel: "The Energiepfad — 6 MOSA Stations",
-      posterAlt: "MOSA Energiepfad learning path overview",
+      sectionLabel: "The Energy Path — 6 MOSA Stations",
+      posterAlt: "MOSA Energy Path learning path overview",
       intro:
-        "MOSA is structured as the Energiepfad — a complete station journey for students, teachers, and the interested public. At each stop, research is made understandable and tangible through hands-on activities on future energy technologies, biodiversity, and carbon applications.",
+        "MOSA is structured as the Energy Path — a complete station journey for students, teachers, and the interested public. At each stop, research is made understandable and tangible through hands-on activities on future energy technologies, biodiversity, and carbon applications.",
       stations: [
         {
           title: "Station 1 — Habitat Biodiversity I: Wildflower Meadow",
@@ -95,7 +95,7 @@ const mosaContent = {
         },
         {
           title: "Station 2 — Circular Pavilion",
-          text: "The circular wooden pavilion is a gathering and orientation point where groups are welcomed and introduced to circular resource use along the Energiepfad.",
+          text: "The circular wooden pavilion is a gathering and orientation point where groups are welcomed and introduced to circular resource use along the Energy Path.",
         },
         {
           title: "Station 3 — Future Lab: Energy and Resources",
