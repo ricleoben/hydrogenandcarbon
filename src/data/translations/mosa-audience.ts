@@ -33,6 +33,25 @@ export type MosaAudienceTranslations = {
       text: string;
     }[];
   };
+  programmes?: {
+    eyebrow: string;
+    title: string;
+    durationLabel: string;
+    targetGroupsLabel: string;
+    idealForLabel: string;
+    items: readonly {
+      title: string;
+      subtitle: string;
+      description: string;
+      contentTitle: string;
+      contentItems: readonly string[];
+      flowTitle?: string;
+      flowText?: string;
+      duration: string;
+      targetGroups: string;
+      idealFor: string;
+    }[];
+  };
   eligibility: {
     eyebrow: string;
     title: string;

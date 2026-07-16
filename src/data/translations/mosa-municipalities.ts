@@ -64,6 +64,51 @@ const mosaMunicipalitiesContent = {
         },
       ],
     },
+    programmes: {
+      eyebrow: "Programme examples",
+      title: "Municipality-ready formats you can book",
+      durationLabel: "Duration",
+      targetGroupsLabel: "Target groups",
+      idealForLabel: "Ideal for",
+      items: [
+        {
+          title: "1. Seedballs & Biodiversity",
+          subtitle: "Participate for more biodiversity",
+          description:
+            "In this interactive short workshop, participants learn in a playful way why biodiversity matters for climate, nutrition, and quality of life. Together, they produce seedballs from regional seeds and take them home.",
+          contentTitle: "Content",
+          contentItems: [
+            "Importance of wildflowers and pollinators",
+            "Biodiversity in everyday life",
+            "Hands-on seedball making",
+            "Practical tips for gardens, balconies, and municipal spaces",
+          ],
+          duration: "45-90 minutes",
+          targetGroups: "Families, children, youth, adults",
+          idealFor: "Municipality festivals, environment weeks, holiday programmes, climate action days",
+        },
+        {
+          title: "2. The Climate Puzzle",
+          subtitle: "Understanding climate knowledge together",
+          description:
+            "The Climate Puzzle is an interactive group format that communicates scientific climate basics in an understandable and playful way. Participants work on links between causes, impacts, and possible solutions.",
+          contentTitle: "Content",
+          contentItems: [
+            "Causes of climate change",
+            "Effects on people and environment",
+            "Global and local connections",
+            "Solutions and options for action",
+            "Shared future thinking",
+          ],
+          flowTitle: "Process",
+          flowText:
+            "Participants work in small groups with cards, images, and relationships, and build one large climate puzzle together.",
+          duration: "90-180 minutes",
+          targetGroups: "Youth, adults, associations, municipality residents",
+          idealFor: "Climate days, citizen participation formats, municipalities, youth projects",
+        },
+      ],
+    },
     eligibility: {
       eyebrow: "Good to know",
       title: "Who MOSA is for",
@@ -188,6 +233,51 @@ const mosaMunicipalitiesContent = {
         {
           title: "Ein regionales Forschungsanker",
           text: "Verbinden Sie lokale Klima- und Ressourcenthemen mit laufender Forschung am Wasserstoff- und Kohlenstoffzentrum in Leoben.",
+        },
+      ],
+    },
+    programmes: {
+      eyebrow: "Programmbeispiele",
+      title: "Buchbare Formate fuer Gemeinden",
+      durationLabel: "Dauer",
+      targetGroupsLabel: "Zielgruppen",
+      idealForLabel: "Ideal fuer",
+      items: [
+        {
+          title: "1. Seedballs & Biodiversitaet",
+          subtitle: "Mitmachen fuer mehr Artenvielfalt",
+          description:
+            "In diesem interaktiven Kurzworkshop lernen Teilnehmer:innen spielerisch, warum Biodiversitaet fuer Klima, Ernaehrung und Lebensqualitaet wichtig ist. Gemeinsam werden Seedballs aus regionalem Saatgut hergestellt und mit nach Hause genommen.",
+          contentTitle: "Inhalte",
+          contentItems: [
+            "Bedeutung von Wildblumen und Bestaeubern",
+            "Biodiversitaet im Alltag",
+            "Seedballs selbst herstellen",
+            "Praktische Tipps fuer Garten, Balkon und Gemeinde",
+          ],
+          duration: "45-90 Minuten",
+          targetGroups: "Familien, Kinder, Jugendliche, Erwachsene",
+          idealFor: "Gemeindefeste, Umweltwochen, Ferienprogramme, Klimatage",
+        },
+        {
+          title: "2. Das Klima Puzzle",
+          subtitle: "Klimawissen gemeinsam verstehen",
+          description:
+            "Das Klima Puzzle ist ein interaktives Gruppenformat, das wissenschaftliche Grundlagen des Klimawandels verstaendlich und spielerisch vermittelt. Gemeinsam werden Zusammenhaenge zwischen Ursachen, Auswirkungen und moeglichen Loesungen erarbeitet.",
+          contentTitle: "Inhalte",
+          contentItems: [
+            "Ursachen des Klimawandels",
+            "Auswirkungen auf Mensch und Umwelt",
+            "Globale und lokale Zusammenhaenge",
+            "Loesungen und Handlungsmoeglichkeiten",
+            "Gemeinsames Zukunftsdenken",
+          ],
+          flowTitle: "Ablauf",
+          flowText:
+            "Die Teilnehmer:innen arbeiten in Kleingruppen mit Karten, Bildern und Zusammenhaengen und erstellen gemeinsam ein grosses Klima Puzzle.",
+          duration: "90-180 Minuten",
+          targetGroups: "Jugendliche, Erwachsene, Vereine, Gemeindebuerger:innen",
+          idealFor: "Klimatage, Buerger:innenbeteiligung, Gemeinden, Jugendprojekte",
         },
       ],
     },

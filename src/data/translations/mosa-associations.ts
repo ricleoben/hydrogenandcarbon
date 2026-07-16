@@ -52,7 +52,7 @@ const mosaAssociationsContent = {
         },
         {
           title: "Adaptable group formats",
-          text: "Workshops of 2–4 hours can be tailored to youth clubs, environmental NGOs, adult education groups, and mixed-age associations.",
+          text: "Workshops of 2–4 hours can be tailored to youth clubs, environmental NGOs, adult education groups, and mixed-aged groups.",
         },
         {
           title: "Professional facilitation",
@@ -178,7 +178,7 @@ const mosaAssociationsContent = {
         },
         {
           title: "Anpassbare Gruppenformate",
-          text: "Workshops von 2–4 Stunden können für Jugendvereine, Umwelt-NGOs, Erwachsenenbildungsgruppen und gemischte Altersstrukturen zugeschnitten werden.",
+          text: "Workshops von 2–4 Stunden können für Jugendvereine, Umwelt-NGOs, Erwachsenenbildungsgruppen und gemischte Altersgruppen zugeschnitten werden.",
         },
         {
           title: "Professionelle Begleitung",

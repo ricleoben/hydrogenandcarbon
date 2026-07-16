@@ -47,12 +47,12 @@ const mosaTeachersContent = {
       title: "What teachers and students gain",
       items: [
         {
-          title: "Curriculum-linked science outdoors",
+          title: "Hands-on science beyond the classroom",
           text: "Energy, resources, biodiversity, and carbon applications become tangible through guided experiments — not slides alone.",
         },
         {
           title: "Age-adapted formats",
-          text: "Colour-coded modules and 2–4 hour workshops are tailored to primary and secondary groups.",
+          text: "Colour-coded modules and 2–4 hour workshops are tailored to primary and secondary school groups.",
         },
         {
           title: "Professional facilitation",
@@ -178,12 +178,12 @@ const mosaTeachersContent = {
       title: "Was Lehrkräfte und Schülerinnen und Schüler gewinnen",
       items: [
         {
-          title: "Lehrplannahe Wissenschaft im Freien",
+          title: "Wissenschaft hautnah jenseits des Klassenzimmers",
           text: "Energie, Ressourcen, Biodiversität und Kohlenstoffanwendungen werden durch geführte Experimente greifbar – nicht nur mit Folien.",
         },
         {
           title: "Altersgerechte Formate",
-          text: "Farbcodierte Module und Workshops von 2–4 Stunden sind auf Primar- und Sekundargruppen zugeschnitten.",
+          text: "Farbcodierte Module und Workshops von 2–4 Stunden sind auf Primar- und Sekundarschulgruppen zugeschnitten.",
         },
         {
           title: "Professionelle Begleitung",

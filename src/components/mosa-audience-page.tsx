@@ -21,6 +21,7 @@ type MosaAudiencePageProps = {
 
 export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.cta.emailSubject)}`;
+  const programmes = t.programmes;
 
   return (
     <>
@@ -123,6 +124,78 @@ export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
               ))}
             </div>
           </article>
+
+          {programmes ? (
+            <article className="overflow-hidden rounded-[1.75rem] border border-[rgba(210,219,92,0.35)] bg-[linear-gradient(165deg,#f7f8ee_0%,#eef6f3_55%,#f4f7f2_100%)] p-7 editorial-shadow sm:p-8">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5a6b2c]">
+                  {programmes.eyebrow}
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl">
+                  {programmes.title}
+                </h2>
+              </div>
+              <div className="mt-6 grid gap-5 lg:grid-cols-2">
+                {programmes.items.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(56,56,55,0.08)] bg-white p-5 shadow-[0_18px_40px_rgba(10,79,88,0.08)] sm:p-6"
+                  >
+                    <div
+                      className="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-[linear-gradient(180deg,#d2db5c_0%,#4eb1d0_55%,#00727d_100%)]"
+                      aria-hidden
+                    />
+                    <div className="pl-3">
+                      <div className="flex items-start gap-3">
+                        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d2db5c] text-sm font-bold text-[#3f4d1f]">
+                          {index + 1}
+                        </span>
+                        <div>
+                          <h3 className="text-xl font-semibold tracking-tight text-[var(--color-charcoal)]">
+                            {item.title.replace(/^\d+\.\s*/, "")}
+                          </h3>
+                          <p className="mt-1 text-sm font-semibold text-[var(--color-teal)]">{item.subtitle}</p>
+                        </div>
+                      </div>
+                      <p className="mt-4 text-sm leading-6 text-[var(--color-muted)]">{item.description}</p>
+                      <div className="mt-5 rounded-[0.9rem] bg-[var(--color-surface-soft)] p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-teal)]">
+                          {item.contentTitle}
+                        </p>
+                        <ul className="mt-3 space-y-2 text-sm leading-6 text-[var(--color-muted)]">
+                          {item.contentItems.map((contentItem) => (
+                            <li key={contentItem} className="flex items-start gap-2.5">
+                              <span className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#d2db5c]" />
+                              {contentItem}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {item.flowTitle && item.flowText ? (
+                        <div className="mt-4 rounded-[0.9rem] border border-[rgba(0,114,125,0.12)] bg-[rgba(185,218,208,0.22)] p-4">
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-teal)]">
+                            {item.flowTitle}
+                          </p>
+                          <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{item.flowText}</p>
+                        </div>
+                      ) : null}
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        <span className="rounded-full bg-[rgba(0,114,125,0.1)] px-3 py-1.5 text-xs font-medium text-[var(--color-teal)]">
+                          {programmes.durationLabel}: {item.duration}
+                        </span>
+                        <span className="rounded-full bg-[rgba(210,219,92,0.28)] px-3 py-1.5 text-xs font-medium text-[#4f5d22]">
+                          {programmes.targetGroupsLabel}: {item.targetGroups}
+                        </span>
+                        <span className="rounded-full bg-[rgba(78,177,208,0.16)] px-3 py-1.5 text-xs font-medium text-[#1f6678]">
+                          {programmes.idealForLabel}: {item.idealFor}
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </article>
+          ) : null}
 
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
