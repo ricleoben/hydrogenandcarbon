@@ -31,6 +31,11 @@ type IconName =
   | "calendar"
   | "hex";
 
+const scoreaOverviewByLocale = {
+  de: "/german_scorea%20overview.png",
+  en: "/eng_scorea%20overview.png",
+} as const;
+
 function MetricIcon({ name }: { name: IconName }) {
   const common = "h-6 w-6 stroke-current";
   switch (name) {
@@ -170,6 +175,7 @@ function MetricValue({ value }: { value: string }) {
 export function HomePageContent() {
   const { locale } = useLanguage();
   const t = getHomeTranslations(locale);
+  const scoreaOverviewSrc = scoreaOverviewByLocale[locale];
 
   return (
     <>
@@ -236,7 +242,7 @@ export function HomePageContent() {
 
           <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-[rgba(56,56,55,0.1)] bg-white editorial-shadow">
             <ContentImage
-              src="/scorea overview.jpeg"
+              src={scoreaOverviewSrc}
               alt={t.strategy.overviewImageAlt}
               width={1600}
               height={900}

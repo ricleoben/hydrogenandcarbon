@@ -16,11 +16,16 @@ import { getCommonUi } from "@/data/translations/common";
 import { getMosaTranslations } from "@/data/translations/mosa";
 
 const mosaHeroSliderImages = ["/MOSA1.jpeg", "/MOSA%202.jpeg", "/MOSA%206.jpeg", "/MOSA%208.jpeg", "/MOSA%209.jpeg"];
+const mosaPosterByLocale = {
+  de: "/MOSA_Plakat%20A0_HB.pptx.png",
+  en: "/eng_mosa_plakat.png",
+} as const;
 
 export default function HydrogenAndCarbonMosaPage() {
   const { locale } = useLanguage();
   const t = getMosaTranslations(locale);
   const ui = getCommonUi(locale);
+  const mosaPosterSrc = mosaPosterByLocale[locale];
   const [activeMosaSlide, setActiveMosaSlide] = useState(0);
   const currentMosaSlide = t.photos[activeMosaSlide];
 
@@ -154,7 +159,7 @@ export default function HydrogenAndCarbonMosaPage() {
             </p>
             <div className="mt-4 overflow-hidden rounded-[1rem] border border-[rgba(56,56,55,0.12)]" data-no-watermark>
               <ContentImage
-                src="/MOSA_Plakat%20A0_HB.pptx.png"
+                src={mosaPosterSrc}
                 alt={t.energiepfad.posterAlt}
                 width={1600}
                 height={1200}
