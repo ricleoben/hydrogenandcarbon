@@ -5,6 +5,7 @@ import { ContentImage } from "@/components/content-image";
 import {
   HeroPageSection,
   HeroPill,
+  HeroSliderBackground,
   HeroTextPanel,
   heroHomeDescriptionClassName,
   heroHomeTitleClassName,
@@ -16,10 +17,19 @@ const CONTACT_EMAIL = "ric-leoben@unileoben.ac.at";
 
 type MosaAudiencePageProps = {
   t: MosaAudienceTranslations;
-  heroImage: string;
+  heroImage?: string;
+  heroImages?: string[];
+  benefitsImage?: string;
+  benefitsImageAlt?: string;
 };
 
-export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
+export function MosaAudiencePage({
+  t,
+  heroImage,
+  heroImages,
+  benefitsImage,
+  benefitsImageAlt = "",
+}: MosaAudiencePageProps) {
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.cta.emailSubject)}`;
   const programmes = t.programmes;
 
@@ -27,18 +37,22 @@ export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
     <>
       <HeroPageSection
         background={
-          <div className="relative h-full min-h-full">
-            <ContentImage
-              src={heroImage}
-              alt=""
-              aria-hidden
-              fill
-              className="object-cover object-center"
-              data-no-watermark
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,46,51,0.15)_0%,rgba(7,46,51,0.55)_42%,rgba(7,46,51,0.92)_100%)] sm:hidden" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-2/3 bg-[linear-gradient(to_top,rgba(7,46,51,0.90)_0%,rgba(7,46,51,0.62)_45%,rgba(7,46,51,0.18)_80%,transparent_100%)] sm:block" />
-          </div>
+          heroImages && heroImages.length > 0 ? (
+            <HeroSliderBackground images={heroImages} />
+          ) : (
+            <div className="relative h-full min-h-full">
+              <ContentImage
+                src={heroImage ?? ""}
+                alt=""
+                aria-hidden
+                fill
+                className="object-cover object-center"
+                data-no-watermark
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,46,51,0.15)_0%,rgba(7,46,51,0.55)_42%,rgba(7,46,51,0.92)_100%)] sm:hidden" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-2/3 bg-[linear-gradient(to_top,rgba(7,46,51,0.90)_0%,rgba(7,46,51,0.62)_45%,rgba(7,46,51,0.18)_80%,transparent_100%)] sm:block" />
+            </div>
+          )
         }
       >
         <div className="max-w-3xl pb-4 text-white">
@@ -109,19 +123,42 @@ export function MosaAudiencePage({ t, heroImage }: MosaAudiencePageProps) {
             </ol>
           </article>
 
-          <article className="rounded-[1.75rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-7 text-white editorial-shadow sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">{t.benefits.eyebrow}</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{t.benefits.title}</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {t.benefits.items.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[1rem] border border-white/15 bg-white/10 p-4 backdrop-blur-[2px]"
-                >
-                  <h3 className="text-base font-semibold tracking-tight">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-white/80">{item.text}</p>
+          <article className="overflow-hidden rounded-[1.75rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] text-white editorial-shadow">
+            <div
+              className={
+                benefitsImage
+                  ? "grid lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-stretch"
+                  : undefined
+              }
+            >
+              {benefitsImage ? (
+                <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-[520px]">
+                  <ContentImage
+                    src={benefitsImage}
+                    alt={benefitsImageAlt}
+                    fill
+                    className="object-cover object-[42%_center]"
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    data-no-watermark
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(10,79,88,0.35)_0%,transparent_45%)] lg:bg-[linear-gradient(to_right,rgba(10,79,88,0.45)_0%,transparent_58%)]" />
                 </div>
-              ))}
+              ) : null}
+              <div className="p-7 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">{t.benefits.eyebrow}</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{t.benefits.title}</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {t.benefits.items.map((item) => (
+                    <div
+                      key={item.title}
+                      className="rounded-[1rem] border border-white/15 bg-white/10 p-4 backdrop-blur-[2px]"
+                    >
+                      <h3 className="text-base font-semibold tracking-tight">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-white/80">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </article>
 
