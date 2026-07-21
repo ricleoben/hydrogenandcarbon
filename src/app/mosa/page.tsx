@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { ContentImage } from "@/components/content-image";
 import {
@@ -65,6 +66,27 @@ export default function HydrogenAndCarbonMosaPage() {
               </div>
             </div>
           </article>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {t.audienceCtas.map((cta) => (
+              <article
+                key={cta.href}
+                className="flex h-full flex-col rounded-[1.75rem] bg-[linear-gradient(160deg,#0a4f58_0%,#0d7882_100%)] p-7 text-white editorial-shadow sm:p-8"
+              >
+                <div className="flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">{cta.eyebrow}</p>
+                  <h2 className="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">{cta.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-white/80 sm:text-base sm:leading-7">{cta.description}</p>
+                </div>
+                <Link
+                  href={cta.href}
+                  className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-[var(--color-teal)] transition hover:bg-white/90"
+                >
+                  {cta.button}
+                </Link>
+              </article>
+            ))}
+          </div>
 
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{t.video.sectionLabel}</p>

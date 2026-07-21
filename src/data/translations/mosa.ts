@@ -6,7 +6,7 @@ const mosaContent = {
       pill: "MOSA",
       title: "MOSA - Montanuni Outdoor Science Activities",
       description:
-        "An interactive learning environment at the Research Centre for Hydrogen and Carbon where visitors follow the Energiepfad through six connected stations — from biodiversity meadows to energy labs and carbon innovation.",
+        "An interactive learning environment at the Research Centre for Hydrogen and Carbon where visitors follow the Energy Path through six connected stations — from biodiversity meadows to energy labs and carbon innovation.",
     },
     intro: {
       title: "How MOSA turns science into hands-on learning",
@@ -16,6 +16,32 @@ const mosaContent = {
         "The didactic design follows a clear narrative logic: participants move through stations with age-adapted, colour-coded modules and interact with real experiments, materials, and landscape elements.",
       ],
     },
+    audienceCtas: [
+      {
+        eyebrow: "For educators",
+        title: "How can MOSA add value to your teaching?",
+        description:
+          "Give your students hands-on science outdoors — guided stations, real experiments, and research-linked topics on energy, biodiversity, and carbon that go beyond the textbook.",
+        button: "How can I work with MOSA?",
+        href: "/mosa/teachers",
+      },
+      {
+        eyebrow: "For municipalities",
+        title: "How can MOSA support your municipality?",
+        description:
+          "Bring energy, biodiversity, and carbon topics to your community through guided outdoor science — with formats that connect local sustainability goals to real research.",
+        button: "How can my municipality work with MOSA?",
+        href: "/mosa/municipalities",
+      },
+      {
+        eyebrow: "For associations",
+        title: "How can your association collaborate with MOSA?",
+        description:
+          "Connect your members to hands-on outdoor science on energy, biodiversity, and carbon — with guided station formats that turn research into shared learning.",
+        button: "How can my association work with MOSA?",
+        href: "/mosa/associations",
+      },
+    ],
     video: {
       sectionLabel: "MOSA Video",
       title: "MOSA related video",
@@ -58,10 +84,10 @@ const mosaContent = {
       ],
     },
     energiepfad: {
-      sectionLabel: "The Energiepfad — 6 MOSA Stations",
-      posterAlt: "MOSA Energiepfad learning path overview",
+      sectionLabel: "The Energy Path — 6 MOSA Stations",
+      posterAlt: "MOSA Energy Path learning path overview",
       intro:
-        "MOSA is structured as the Energiepfad — a complete station journey for students, teachers, and the interested public. At each stop, research is made understandable and tangible through hands-on activities on future energy technologies, biodiversity, and carbon applications.",
+        "MOSA is structured as the Energy Path — a complete station journey for students, teachers, and the interested public. At each stop, research is made understandable and tangible through hands-on activities on future energy technologies, biodiversity, and carbon applications.",
       stations: [
         {
           title: "Station 1 — Habitat Biodiversity I: Wildflower Meadow",
@@ -69,7 +95,7 @@ const mosaContent = {
         },
         {
           title: "Station 2 — Circular Pavilion",
-          text: "The circular wooden pavilion is a gathering and orientation point where groups are welcomed and introduced to circular resource use along the Energiepfad.",
+          text: "The circular wooden pavilion is a gathering and orientation point where groups are welcomed and introduced to circular resource use along the Energy Path.",
         },
         {
           title: "Station 3 — Future Lab: Energy and Resources",
@@ -160,6 +186,32 @@ const mosaContent = {
         "Das didaktische Konzept folgt einer klaren Erzähllogik: Teilnehmende bewegen sich durch altersgerechte, farbcodierte Module und interagieren mit echten Experimenten, Materialien und Landschaftselementen.",
       ],
     },
+    audienceCtas: [
+      {
+        eyebrow: "Für Lehrkräfte",
+        title: "Welchen Mehrwert bietet MOSA für Ihren Unterricht?",
+        description:
+          "Ermöglichen Sie Ihren Schülerinnen und Schülern praxisnahe Wissenschaft im Freien – mit geführten Stationen, echten Experimenten und forschungsnahen Themen zu Energie, Biodiversität und Kohlenstoff jenseits des Lehrbuchs.",
+        button: "Wie kann ich mit MOSA zusammenarbeiten?",
+        href: "/mosa/teachers",
+      },
+      {
+        eyebrow: "Für Gemeinden",
+        title: "Wie kann MOSA Ihre Gemeinde unterstützen?",
+        description:
+          "Bringen Sie Themen zu Energie, Biodiversität und Kohlenstoff mit geführter Outdoor-Wissenschaft in Ihre Gemeinde – mit Formaten, die lokale Nachhaltigkeitsziele mit realer Forschung verbinden.",
+        button: "Wie kann meine Gemeinde mit MOSA zusammenarbeiten?",
+        href: "/mosa/municipalities",
+      },
+      {
+        eyebrow: "Für Vereine",
+        title: "Wie kann Ihr Verein mit MOSA zusammenarbeiten?",
+        description:
+          "Verbinden Sie Ihre Mitglieder mit praxisnaher Outdoor-Wissenschaft zu Energie, Biodiversität und Kohlenstoff – mit geführten Stationsformaten, die Forschung in gemeinsames Lernen verwandeln.",
+        button: "Wie kann mein Verein mit MOSA zusammenarbeiten?",
+        href: "/mosa/associations",
+      },
+    ],
     video: {
       sectionLabel: "MOSA-Video",
       title: "MOSA-bezogenes Video",
