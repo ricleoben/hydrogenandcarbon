@@ -4,6 +4,8 @@ import "./globals.css";
 import { GlobalImageWatermark } from "@/components/global-image-watermark";
 import { LanguageProvider } from "@/components/language-provider";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
+import { getCommonUi } from "@/data/translations/common";
+import { SITE_NAME, SITE_URL } from "@/lib/metadata";
 import { getLocale } from "@/lib/server-i18n";
 
 const inter = Inter({
@@ -17,10 +19,19 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hydrogenandcarbon.at"),
-  title: "SCoRe A⁺ Hydrogen and Carbon",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} Centre`,
+    template: `%s | ${SITE_NAME}`,
+  },
   description:
-    "Standalone website for the SCoRe A⁺ Hydrogen and Carbon Centre at Montanuniversitaet Leoben.",
+    "Research centre for methane pyrolysis, hydrogen storage, and carbon utilisation at Montanuniversitaet Leoben.",
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+  },
 };
 
 export default async function RootLayout({
@@ -29,6 +40,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const ui = getCommonUi(locale);
 
   return (
     <html
@@ -40,9 +52,17 @@ export default async function RootLayout({
       <body suppressHydrationWarning className="min-h-full bg-[var(--color-bg)] text-[var(--color-charcoal)] antialiased">
         <LanguageProvider initialLocale={locale}>
           <GlobalImageWatermark />
+          <a
+            href="#main-content"
+            className="sr-only rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100]"
+          >
+            {ui.skipToContent}
+          </a>
           <div className="flex min-h-full flex-col">
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
             <SiteFooter />
           </div>
         </LanguageProvider>

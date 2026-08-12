@@ -36,23 +36,3 @@ export type PublicationCategory = keyof typeof publicationUi.en.categoryShort;
 export function getPublicationUi(locale: Locale) {
   return publicationUi[locale];
 }
-
-export function getPublicationFilters(locale: Locale) {
-  const ui = getPublicationUi(locale);
-  return [
-    ui.filters.all,
-    ui.filters.hydrogenProduction,
-    ui.filters.storageTransport,
-    ui.filters.carbon,
-  ] as const;
-}
-
-export function getPublicationFilterMap(locale: Locale) {
-  const ui = getPublicationUi(locale);
-  return {
-    [ui.filters.all]: "All",
-    [ui.filters.hydrogenProduction]: "Hydrogen Production",
-    [ui.filters.storageTransport]: "Hydrogen Storage, Transport, and Application",
-    [ui.filters.carbon]: "Carbon and its Applications",
-  } as Record<string, PublicationCategory | "All">;
-}

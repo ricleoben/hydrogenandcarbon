@@ -1,7 +1,5 @@
-"use client";
-
-import { useLanguage } from "@/components/language-provider";
 import { getMosaThematicAreasTranslations } from "@/data/translations/mosa-thematic-areas";
+import type { Locale } from "@/lib/i18n";
 
 const ORBIT_RADIUS = 43.5;
 
@@ -15,8 +13,7 @@ function getOrbitPosition(index: number, total: number) {
   };
 }
 
-export function MosaThematicAreasDiagram() {
-  const { locale } = useLanguage();
+export function MosaThematicAreasDiagram({ locale }: { locale: Locale }) {
   const t = getMosaThematicAreasTranslations(locale);
 
   return (

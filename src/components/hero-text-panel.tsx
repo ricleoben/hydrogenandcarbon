@@ -94,10 +94,6 @@ export function heroTitleClassName() {
   return "w-full text-[clamp(1.45rem,6.5vw,4.2rem)] font-semibold leading-[1.12] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]";
 }
 
-export function heroDescriptionClassName() {
-  return "mt-3 w-full text-[0.9375rem] leading-6 text-white/88 drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:mt-4 sm:text-base sm:leading-7 md:text-lg";
-}
-
 export function heroMobileScrimClassName() {
   return "pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,46,51,0.15)_0%,rgba(7,46,51,0.55)_42%,rgba(7,46,51,0.92)_100%)] sm:hidden";
 }

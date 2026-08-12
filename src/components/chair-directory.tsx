@@ -45,7 +45,10 @@ export function ChairDirectory({ groups, contactPersonLabel, emailLabel }: Chair
         </ul>
       </div>
 
-      <article className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)] lg:sticky lg:top-24 lg:self-start">
+      <article
+        className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)] lg:sticky lg:top-24 lg:self-start"
+        aria-live="polite"
+      >
         <div className="p-4 sm:p-5">
           <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-teal)]">
             {selectedGroup.chair}

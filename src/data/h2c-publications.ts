@@ -191,7 +191,7 @@ export const h2cPublicationPosters: H2CPublicationPoster[] = [
     title: "Functionalisation of Nanoporous Carbons",
     authors: "Knabl, F.; Kostoglou, N.; Bandl, C.; Tkadletz, M.; Grießer, T.; Mitterer, C.",
     category: "Carbon and its Applications",
-    pdfPath: "/posters/Functionalisation of Nanoporous Carbons.pdf",
+    pdfPath: "/posters/Functionalization of Nanoporous Carbons.pdf",
   },
   {
     id: "stock-gas-sorption-analysis",

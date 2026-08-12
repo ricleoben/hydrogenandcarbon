@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ChairDirectory } from "@/components/chair-directory";
 import { ContentImage } from "@/components/content-image";
 import {
@@ -8,8 +9,16 @@ import {
 } from "@/components/hero-text-panel";
 import { getCommonUi } from "@/data/translations/common";
 import { getH2CChairGroups } from "@/data/h2c-chairs";
+import { getRouteMeta } from "@/data/translations/meta";
 import { getTeamMentors, getTeamUi } from "@/data/translations/team";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocale } from "@/lib/server-i18n";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const routeMeta = getRouteMeta(locale, "team");
+  return buildPageMetadata({ locale, path: "/team", ...routeMeta });
+}
 
 export default async function HydrogenAndCarbonTeamPage() {
   const locale = await getLocale();
@@ -23,10 +32,13 @@ export default async function HydrogenAndCarbonTeamPage() {
       <section className="relative min-h-[320px] overflow-hidden sm:min-h-[400px] lg:min-h-[520px]" data-no-watermark>
         <div className="absolute inset-0" data-no-watermark>
           <ContentImage
-            src="/Forschungszentrum-Wasserstoff-und-Kohlenstoff.gif"
+            src="/research-centre-hero.jpg"
             alt=""
             aria-hidden
             fill
+            priority
+            fetchPriority="high"
+            quality={60}
             className="object-cover object-[center_35%] sm:object-[78%_center]"
             data-no-watermark
           />

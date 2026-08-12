@@ -86,9 +86,21 @@ export const commonUi = {
     noSearchResults: "No posters match your search. Try a different project title or author name.",
     noCategoryPosters: "No posters are available in this category.",
     filterAll: "All",
-    homepageAria: "Go to Hydrogen and Carbon Centre homepage",
+    homepageAria: "SCoRe A⁺ Hydrogen & Carbon — Home",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    skipToContent: "Skip to main content",
+    notFoundEyebrow: "Error 404",
+    notFoundTitle: "This page could not be found",
+    notFoundDescription:
+      "The page you are looking for may have been moved or no longer exists. Use the links below to continue browsing the Hydrogen and Carbon Centre.",
+    backToHome: "Back to home",
+    browseResearch: "Browse research",
+    errorEyebrow: "Something went wrong",
+    errorTitle: "This page could not be loaded",
+    errorDescription:
+      "An unexpected error occurred while rendering this page. Please try again, or return to the homepage.",
+    tryAgain: "Try again",
   },
   de: {
     menu: "Menü",
@@ -134,9 +146,21 @@ export const commonUi = {
     noSearchResults: "Keine Poster entsprechen Ihrer Suche. Versuchen Sie einen anderen Projekttitel oder Autorennamen.",
     noCategoryPosters: "In dieser Kategorie sind keine Poster verfügbar.",
     filterAll: "Alle",
-    homepageAria: "Zur Startseite des Hydrogen and Carbon Centres",
+    homepageAria: "SCoRe A⁺ Wasserstoff & Kohlenstoff — Startseite",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
+    skipToContent: "Zum Hauptinhalt springen",
+    notFoundEyebrow: "Fehler 404",
+    notFoundTitle: "Diese Seite konnte nicht gefunden werden",
+    notFoundDescription:
+      "Die gesuchte Seite wurde möglicherweise verschoben oder existiert nicht mehr. Nutzen Sie die folgenden Links, um weiter im Hydrogen and Carbon Centre zu navigieren.",
+    backToHome: "Zurück zur Startseite",
+    browseResearch: "Forschung ansehen",
+    errorEyebrow: "Ein Fehler ist aufgetreten",
+    errorTitle: "Diese Seite konnte nicht geladen werden",
+    errorDescription:
+      "Beim Aufbau dieser Seite ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut oder kehren Sie zur Startseite zurück.",
+    tryAgain: "Erneut versuchen",
   },
 } as const;
 

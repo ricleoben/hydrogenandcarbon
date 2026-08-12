@@ -1,7 +1,5 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import { ContentImage } from "@/components/content-image";
 import {
   HeroPageSection,
@@ -11,9 +9,12 @@ import {
   heroHomeDescriptionClassName,
   heroHomeTitleClassName,
 } from "@/components/hero-text-panel";
-import { useLanguage } from "@/components/language-provider";
+import { MediaCarousel } from "@/components/media-carousel";
 import { getCommonUi } from "@/data/translations/common";
+import { getRouteMeta } from "@/data/translations/meta";
 import { getMosaTranslations } from "@/data/translations/mosa";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getLocale } from "@/lib/server-i18n";
 
 const mosaHeroSliderImages = ["/MOSA1.jpeg", "/MOSA%202.jpeg", "/MOSA%206.jpeg", "/MOSA%208.jpeg", "/MOSA%209.jpeg"];
 const mosaPosterByLocale = {
@@ -21,21 +22,23 @@ const mosaPosterByLocale = {
   en: "/eng_mosa_plakat.png",
 } as const;
 
-export default function HydrogenAndCarbonMosaPage() {
-  const { locale } = useLanguage();
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const routeMeta = getRouteMeta(locale, "mosa");
+  return buildPageMetadata({ locale, path: "/mosa", ...routeMeta });
+}
+
+export default async function HydrogenAndCarbonMosaPage() {
+  const locale = await getLocale();
   const t = getMosaTranslations(locale);
   const ui = getCommonUi(locale);
   const mosaPosterSrc = mosaPosterByLocale[locale];
-  const [activeMosaSlide, setActiveMosaSlide] = useState(0);
-  const currentMosaSlide = t.photos[activeMosaSlide];
 
-  const showPreviousMosa = () => {
-    setActiveMosaSlide((prev) => (prev === 0 ? t.photos.length - 1 : prev - 1));
-  };
-
-  const showNextMosa = () => {
-    setActiveMosaSlide((prev) => (prev === t.photos.length - 1 ? 0 : prev + 1));
-  };
+  const carouselSlides = t.photos.map((photo, index) => ({
+    ...photo,
+    counterLabel: t.gallery.slideCounter(index + 1, t.photos.length),
+    goToLabel: t.gallery.goToSlide(index + 1),
+  }));
 
   return (
     <>
@@ -50,21 +53,17 @@ export default function HydrogenAndCarbonMosaPage() {
       <section className="px-4 pt-10 pb-12 sm:px-10 sm:pt-14 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
-            <div>
-              <div>
-                <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl">
-                  {t.intro.title}
-                </h2>
-                {t.intro.paragraphs.map((paragraph, index) => (
-                  <p
-                    key={paragraph}
-                    className={`${index === 0 ? "mt-5" : "mt-4"} text-base leading-7 text-[var(--color-muted)]`}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-charcoal)] sm:text-3xl md:text-4xl">
+              {t.intro.title}
+            </h2>
+            {t.intro.paragraphs.map((paragraph, index) => (
+              <p
+                key={paragraph}
+                className={`${index === 0 ? "mt-5" : "mt-4"} text-base leading-7 text-[var(--color-muted)]`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </article>
 
           <div className="grid gap-6 lg:grid-cols-3">
@@ -93,8 +92,9 @@ export default function HydrogenAndCarbonMosaPage() {
             <div className="mt-5 overflow-hidden rounded-[1rem] border border-[rgba(56,56,55,0.12)] bg-black/5">
               <iframe
                 className="aspect-video w-full"
-                src="https://www.youtube.com/embed/ZCGYK_ahkCI"
+                src="https://www.youtube-nocookie.com/embed/ZCGYK_ahkCI"
                 title={t.video.title}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -186,56 +186,7 @@ export default function HydrogenAndCarbonMosaPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
               {t.gallery.sectionLabel}
             </p>
-            <div className="mt-4 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="relative overflow-hidden rounded-[1rem] border border-[rgba(56,56,55,0.12)] bg-black/5">
-                <ContentImage
-                  src={currentMosaSlide.src}
-                  alt={currentMosaSlide.alt}
-                  width={1200}
-                  height={800}
-                  className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-[420px] sm:object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-              </div>
-              <div className="rounded-[1rem] border border-[rgba(56,56,55,0.08)] bg-[var(--color-surface-soft)] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                  {t.gallery.slideCounter(activeMosaSlide + 1, t.photos.length)}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)]">
-                  {currentMosaSlide.title}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">{currentMosaSlide.text}</p>
-                <div className="mt-6 flex gap-3">
-                  <button
-                    type="button"
-                    onClick={showPreviousMosa}
-                    className="rounded-full border border-[rgba(56,56,55,0.2)] px-4 py-2 text-sm font-semibold text-[var(--color-charcoal)] transition hover:bg-white"
-                  >
-                    {ui.previous}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={showNextMosa}
-                    className="rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
-                  >
-                    {ui.next}
-                  </button>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {t.photos.map((slide, index) => (
-                    <button
-                      key={slide.src}
-                      type="button"
-                      onClick={() => setActiveMosaSlide(index)}
-                      className={`h-2.5 w-8 rounded-full transition ${
-                        index === activeMosaSlide ? "bg-[var(--color-teal)]" : "bg-[rgba(56,56,55,0.2)]"
-                      }`}
-                      aria-label={t.gallery.goToSlide(index + 1)}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <MediaCarousel slides={carouselSlides} previousLabel={ui.previous} nextLabel={ui.next} />
           </article>
         </div>
       </section>

@@ -91,6 +91,7 @@ export async function SiteHeader() {
             width={240}
             height={76}
             className="h-7 w-auto shrink-0 object-contain sm:h-10 lg:h-11"
+            sizes="(max-width: 639px) 80px, (max-width: 1023px) 128px, 140px"
             priority
           />
           <span className="h-6 w-px shrink-0 bg-[var(--color-charcoal)]/15 sm:h-8 lg:h-9" aria-hidden />
@@ -100,7 +101,7 @@ export async function SiteHeader() {
             width={700}
             height={105}
             className="hidden h-8 w-auto object-contain object-left sm:block sm:h-10 lg:h-11"
-            priority
+            sizes="(max-width: 639px) 1px, (max-width: 1023px) 268px, 294px"
           />
           <div className="min-w-0 sm:hidden">
             <p className="font-[family-name:var(--font-manrope)] text-[11px] font-bold leading-tight text-[var(--color-teal)]">
@@ -177,6 +178,7 @@ export async function SiteFooter() {
                 width={240}
                 height={76}
                 className="h-10 w-auto object-contain sm:h-11"
+                sizes="(max-width: 639px) 128px, 140px"
               />
               <span className="h-8 w-px bg-[var(--color-charcoal)]/20 sm:h-9" aria-hidden />
               <Image
@@ -185,6 +187,7 @@ export async function SiteFooter() {
                 width={700}
                 height={105}
                 className="h-9 w-auto object-contain sm:h-10"
+                sizes="(max-width: 639px) 240px, 268px"
               />
             </div>
             <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-[var(--color-muted)]">

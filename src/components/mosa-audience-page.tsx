@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ContentImage } from "@/components/content-image";
 import {
@@ -12,10 +10,12 @@ import {
 } from "@/components/hero-text-panel";
 import { MosaThematicAreasDiagram } from "@/components/mosa-thematic-areas-diagram";
 import type { MosaAudienceTranslations } from "@/data/translations/mosa-audience";
+import type { Locale } from "@/lib/i18n";
 
 const CONTACT_EMAIL = "ric-leoben@unileoben.ac.at";
 
 type MosaAudiencePageProps = {
+  locale: Locale;
   t: MosaAudienceTranslations;
   heroImage?: string;
   heroImages?: string[];
@@ -24,6 +24,7 @@ type MosaAudiencePageProps = {
 };
 
 export function MosaAudiencePage({
+  locale,
   t,
   heroImage,
   heroImages,
@@ -87,7 +88,7 @@ export function MosaAudiencePage({
             ))}
           </article>
 
-          <MosaThematicAreasDiagram />
+          <MosaThematicAreasDiagram locale={locale} />
 
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">

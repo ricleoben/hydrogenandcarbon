@@ -1,16 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionIntro } from "@/components/sections";
 import { getCommonUi } from "@/data/translations/common";
 import { getResearchUi } from "@/data/translations/research";
 import { supervisorAffiliations, supervisorDisplayNames } from "@/data/h2c-chairs";
-import { getRelatedPublicationId, getResearchItemById } from "@/data/h2c-research";
+import { getRelatedPublicationId, getResearchItemById, h2cResearchItems } from "@/data/h2c-research";
 import { getPublicationThesisById } from "@/data/h2c-theses";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocale } from "@/lib/server-i18n";
 
 type ResearchDetailPageProps = {
   params: Promise<{ id: string }>;
 };
+
+export function generateStaticParams() {
+  return h2cResearchItems.map((item) => ({ id: item.id }));
+}
+
+export async function generateMetadata({ params }: ResearchDetailPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const item = getResearchItemById(id);
+  const locale = await getLocale();
+
+  if (!item) {
+    return { title: "Research project", robots: { index: false, follow: false } };
+  }
+
+  return buildPageMetadata({
+    locale,
+    path: `/research/${id}`,
+    title: item.title,
+    description: item.summary,
+    type: "article",
+  });
+}
 
 export default async function ResearchDetailPage({ params }: ResearchDetailPageProps) {
   const { id } = await params;
@@ -36,7 +60,12 @@ export default async function ResearchDetailPage({ params }: ResearchDetailPageP
           >
             {ui.backToResearch}
           </Link>
-          <SectionIntro eyebrow={researchLabels.detailEyebrow} title={item.title} description={item.summary} />
+          <SectionIntro
+            as="h1"
+            eyebrow={researchLabels.detailEyebrow}
+            title={item.title}
+            description={item.summary}
+          />
         </div>
       </section>
 
