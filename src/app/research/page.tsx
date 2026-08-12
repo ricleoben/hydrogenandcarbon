@@ -1,90 +1,53 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { useLanguage } from "@/components/language-provider";
+import type { Metadata } from "next";
 import { SectionIntro } from "@/components/sections";
 import { getCommonUi } from "@/data/translations/common";
+import { getRouteMeta } from "@/data/translations/meta";
 import { getResearchTrackLabel, getResearchUi } from "@/data/translations/research";
-import { getRelatedPublicationId, getTrackItems, researchTracks, type ResearchTrack } from "@/data/h2c-research";
+import { getRelatedPublicationId, getTrackItems, researchTracks } from "@/data/h2c-research";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getLocale } from "@/lib/server-i18n";
+import { ResearchTrackExplorer, type ResearchTrackView } from "./research-track-explorer";
 
-export default function HydrogenAndCarbonResearchPage() {
-  const { locale } = useLanguage();
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const routeMeta = getRouteMeta(locale, "research");
+  return buildPageMetadata({ locale, path: "/research", ...routeMeta });
+}
+
+export default async function HydrogenAndCarbonResearchPage() {
+  const locale = await getLocale();
   const ui = getCommonUi(locale);
   const researchLabels = getResearchUi(locale);
-  const [activeTrack, setActiveTrack] = useState<ResearchTrack>(researchTracks[0]);
-  const filteredArticles = getTrackItems(activeTrack);
+
+  const tracks: ResearchTrackView[] = researchTracks.map((track) => ({
+    key: track,
+    label: getResearchTrackLabel(locale, track),
+    items: getTrackItems(track).map((item) => ({
+      id: item.id,
+      title: item.title,
+      candidate: item.candidate,
+      chair: item.chair,
+      duration: `${item.start} - ${item.end}`,
+      summary: item.summary,
+      publicationId: getRelatedPublicationId(item.id) ?? null,
+    })),
+  }));
 
   return (
-    <>
-      <section className="px-4 pt-20 pb-10 sm:px-10 sm:pt-24 sm:pb-14 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro title={researchLabels.title} />
-          <div className="mt-8 flex flex-wrap gap-3">
-            {researchTracks.map((track) => (
-              <button
-                key={track}
-                onClick={() => setActiveTrack(track)}
-                className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
-                  track === activeTrack
-                    ? "border-[var(--color-teal)] bg-[var(--color-teal)] text-white"
-                    : "border-[var(--color-teal)]/35 bg-[var(--color-surface-soft)] text-[var(--color-teal)] hover:bg-[var(--color-mint)]/40"
-                }`}
-              >
-                {getResearchTrackLabel(locale, track)}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-4 pb-12 sm:px-10 sm:pb-16 lg:px-16">
-        <div className="mx-auto max-w-7xl rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-teal)] sm:text-3xl">
-            {getResearchTrackLabel(locale, activeTrack)}
-          </h2>
-          <div className="mt-7 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {filteredArticles.map((article) => (
-              <article key={article.id} className="rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-white p-5">
-                <h3 className="text-base font-semibold leading-6 text-[var(--color-charcoal)]">{article.title}</h3>
-                <p className="mt-2 text-sm text-[var(--color-muted)]">
-                  <strong>{ui.candidate}</strong> {article.candidate}
-                </p>
-                <p className="mt-1 text-sm text-[var(--color-muted)]">
-                  <strong>{ui.chair}</strong> {article.chair}
-                </p>
-                <p className="mt-1 text-sm text-[var(--color-muted)]">
-                  <strong>{ui.duration}</strong> {article.start} - {article.end}
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">{article.summary}</p>
-                {(() => {
-                  const publicationId = getRelatedPublicationId(article.id);
-                  return (
-                    <div className="mt-4 flex items-center justify-between gap-3">
-                      {publicationId ? (
-                        <Link
-                          href={`/publications/${publicationId}`}
-                          className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-teal)] underline-offset-2 hover:underline"
-                        >
-                          <span aria-hidden>←</span> {ui.relatedPublication}
-                        </Link>
-                      ) : (
-                        <span />
-                      )}
-                      <Link
-                        href={`/research/${article.id}`}
-                        className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-teal)] underline-offset-2 hover:underline"
-                      >
-                        {ui.learnMore} <span aria-hidden>→</span>
-                      </Link>
-                    </div>
-                  );
-                })()}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+    <section className="px-4 pt-20 pb-12 sm:px-10 sm:pt-24 sm:pb-16 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <SectionIntro as="h1" title={researchLabels.title} />
+        <ResearchTrackExplorer
+          tracks={tracks}
+          labels={{
+            candidate: ui.candidate,
+            chair: ui.chair,
+            duration: ui.duration,
+            learnMore: ui.learnMore,
+            relatedPublication: ui.relatedPublication,
+          }}
+        />
+      </div>
+    </section>
   );
 }

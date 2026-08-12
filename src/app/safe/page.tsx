@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import { ContentImage } from "@/components/content-image";
 import {
   HeroPageSection,
@@ -10,9 +8,12 @@ import {
   heroHomeDescriptionClassName,
   heroHomeTitleClassName,
 } from "@/components/hero-text-panel";
-import { useLanguage } from "@/components/language-provider";
+import { MediaCarousel } from "@/components/media-carousel";
 import { getCommonUi } from "@/data/translations/common";
+import { getRouteMeta } from "@/data/translations/meta";
 import { getSafeTranslations } from "@/data/translations/safe";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getLocale } from "@/lib/server-i18n";
 
 const safeHeroSliderImages = ["/SAFE1.jpeg", "/SAFE2.jpeg", "/SAFE3.jpeg", "/SAFE4.jpeg", "/SAFE5.jpeg"];
 const safeOverviewImageByLocale = {
@@ -20,21 +21,23 @@ const safeOverviewImageByLocale = {
   en: "/safeovervieweng.jpeg",
 } as const;
 
-export default function HydrogenAndCarbonSafePage() {
-  const { locale } = useLanguage();
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const routeMeta = getRouteMeta(locale, "safe");
+  return buildPageMetadata({ locale, path: "/safe", ...routeMeta });
+}
+
+export default async function HydrogenAndCarbonSafePage() {
+  const locale = await getLocale();
   const t = getSafeTranslations(locale);
   const ui = getCommonUi(locale);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const currentSlide = t.slides[activeSlide];
   const overviewImageSrc = safeOverviewImageByLocale[locale];
 
-  const showPrevious = () => {
-    setActiveSlide((prev) => (prev === 0 ? t.slides.length - 1 : prev - 1));
-  };
-
-  const showNext = () => {
-    setActiveSlide((prev) => (prev === t.slides.length - 1 ? 0 : prev + 1));
-  };
+  const carouselSlides = t.slides.map((slide, index) => ({
+    ...slide,
+    counterLabel: t.gallery.slideCounter(index + 1, t.slides.length),
+    goToLabel: t.gallery.goToSlide(index + 1),
+  }));
 
   return (
     <>
@@ -135,56 +138,7 @@ export default function HydrogenAndCarbonSafePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
               {t.gallery.sectionLabel}
             </p>
-            <div className="mt-4 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="relative overflow-hidden rounded-[1rem] border border-[rgba(56,56,55,0.12)] bg-black/5">
-                <ContentImage
-                  src={currentSlide.src}
-                  alt={currentSlide.alt}
-                  width={1200}
-                  height={800}
-                  className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-[420px] sm:object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-              </div>
-              <div className="rounded-[1rem] border border-[rgba(56,56,55,0.08)] bg-[var(--color-surface-soft)] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                  {t.gallery.slideCounter(activeSlide + 1, t.slides.length)}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--color-charcoal)]">
-                  {currentSlide.title}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">{currentSlide.text}</p>
-                <div className="mt-6 flex gap-3">
-                  <button
-                    type="button"
-                    onClick={showPrevious}
-                    className="rounded-full border border-[rgba(56,56,55,0.2)] px-4 py-2 text-sm font-semibold text-[var(--color-charcoal)] transition hover:bg-white"
-                  >
-                    {ui.previous}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={showNext}
-                    className="rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
-                  >
-                    {ui.next}
-                  </button>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {t.slides.map((slide, index) => (
-                    <button
-                      key={slide.src}
-                      type="button"
-                      onClick={() => setActiveSlide(index)}
-                      className={`h-2.5 w-8 rounded-full transition ${
-                        index === activeSlide ? "bg-[var(--color-teal)]" : "bg-[rgba(56,56,55,0.2)]"
-                      }`}
-                      aria-label={t.gallery.goToSlide(index + 1)}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <MediaCarousel slides={carouselSlides} previousLabel={ui.previous} nextLabel={ui.next} />
           </article>
         </div>
       </section>

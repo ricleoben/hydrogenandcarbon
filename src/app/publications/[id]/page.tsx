@@ -1,16 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionIntro } from "@/components/sections";
 import { getCommonUi } from "@/data/translations/common";
 import { getPublicationUi } from "@/data/translations/publications";
-import { getPublicationPosterById } from "@/data/h2c-publications";
+import { getPublicationPosterById, h2cPublicationPosters } from "@/data/h2c-publications";
 import { getRelatedResearchId } from "@/data/h2c-research";
 import { getPublicationThesisById } from "@/data/h2c-theses";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocale } from "@/lib/server-i18n";
 
 type PosterDetailPageProps = {
   params: Promise<{ id: string }>;
 };
+
+export function generateStaticParams() {
+  return h2cPublicationPosters.map((poster) => ({ id: poster.id }));
+}
+
+export async function generateMetadata({ params }: PosterDetailPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const poster = getPublicationPosterById(id);
+  const locale = await getLocale();
+
+  if (!poster) {
+    return { title: "Poster", robots: { index: false, follow: false } };
+  }
+
+  return buildPageMetadata({
+    locale,
+    path: `/publications/${id}`,
+    title: poster.title,
+    description: poster.authors,
+    type: "article",
+  });
+}
 
 export default async function PosterDetailPage({ params }: PosterDetailPageProps) {
   const { id } = await params;
@@ -39,7 +63,7 @@ export default async function PosterDetailPage({ params }: PosterDetailPageProps
           >
             {ui.backToPublications}
           </Link>
-          <SectionIntro eyebrow={ui.posterDetail} title={poster.title} description={poster.authors} />
+          <SectionIntro as="h1" eyebrow={ui.posterDetail} title={poster.title} description={poster.authors} />
         </div>
       </section>
 

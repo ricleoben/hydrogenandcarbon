@@ -5,6 +5,8 @@ type SectionIntroProps = {
   align?: "left" | "center";
   variant?: "default" | "onDark";
   titleTone?: "default" | "teal";
+  /** Use "h1" when this intro is the page's primary heading. */
+  as?: "h1" | "h2";
 };
 
 export function SectionIntro({
@@ -14,6 +16,7 @@ export function SectionIntro({
   align = "left",
   variant = "default",
   titleTone = "default",
+  as: Heading = "h2",
 }: SectionIntroProps) {
   const onDark = variant === "onDark";
   const titleColor =
@@ -36,11 +39,11 @@ export function SectionIntro({
           {eyebrow}
         </p>
       ) : null}
-      <h2
+      <Heading
         className={`max-w-none text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl ${titleColor}`}
       >
         {title}
-      </h2>
+      </Heading>
       {description ? (
         <p
           className={

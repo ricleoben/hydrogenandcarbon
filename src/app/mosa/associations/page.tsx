@@ -1,8 +1,9 @@
-"use client";
-
+import type { Metadata } from "next";
 import { MosaAudiencePage } from "@/components/mosa-audience-page";
-import { useLanguage } from "@/components/language-provider";
+import { getRouteMeta } from "@/data/translations/meta";
 import { getMosaAssociationsTranslations } from "@/data/translations/mosa-associations";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getLocale } from "@/lib/server-i18n";
 
 const associationsHeroImages = [
   "/associations1.jpeg",
@@ -17,12 +18,19 @@ const benefitsImageAltByLocale = {
   de: "Vereinsmitglieder bei einem MOSA-Outdoor-Workshop am Forschungszentrum",
 } as const;
 
-export default function MosaAssociationsPage() {
-  const { locale } = useLanguage();
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const routeMeta = getRouteMeta(locale, "mosaAssociations");
+  return buildPageMetadata({ locale, path: "/mosa/associations", ...routeMeta });
+}
+
+export default async function MosaAssociationsPage() {
+  const locale = await getLocale();
   const t = getMosaAssociationsTranslations(locale);
 
   return (
     <MosaAudiencePage
+      locale={locale}
       t={t}
       heroImages={associationsHeroImages}
       benefitsImage="/associations3.jpeg"

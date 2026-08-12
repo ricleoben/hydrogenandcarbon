@@ -1,21 +1,5 @@
+import type { MetricIconName as IconName } from "@/components/metric-icons";
 import type { Locale } from "@/lib/i18n";
-
-type IconName =
-  | "person"
-  | "group"
-  | "target"
-  | "coin"
-  | "house"
-  | "file"
-  | "hands"
-  | "leaf"
-  | "book"
-  | "sprout"
-  | "thermometer"
-  | "cycle"
-  | "handshake"
-  | "calendar"
-  | "hex";
 
 const homeContent = {
   en: {
