@@ -14,46 +14,46 @@ export type ChairGroup = {
 };
 
 /**
- * Chair contacts are built from Research project data (`h2c-research.ts`):
- * each project's `supervisors` list → affiliation → MUL chair name.
- * If several projects share a chair but have different supervisors, all are listed.
- * Publications only decide which chairs appear in the directory (via author → chair map).
- * E-mails use the `supervisorEmails` table (MUL @unileoben.ac.at pattern; verify on request).
+ * Which chairs appear is derived from project data: each research project's `chair` field
+ * plus publication authors mapped via `authorSurnameToChair`.
+ * The directory shows each chair's current head (`chairHeads`) under its current MUL name
+ * (German names in `chairLabelsDe`), taken from unileoben.ac.at/en/university/departments-and-chairs/.
+ * Project supervisors stay on the research detail pages via `supervisorAffiliations`.
  */
 
 export const supervisorAffiliations: Record<string, string> = {
-  "Univ.-Prof. Markus Lehner": "Chair of Process Technology and Industrial Environmental Protection, Montanuniversitaet Leoben",
-  "Univ.-Prof. Johannes Schenk": "Chair of Ferrous Metallurgy, Montanuniversitaet Leoben",
-  "Univ.-Prof. Helmut Antrekowitsch": "Chair of Nonferrous Metallurgy, Montanuniversitaet Leoben",
-  "Ao.Univ.-Prof. Clemens Brand": "Chair of Applied Mathematics, Montanuniversitaet Leoben",
-  "Univ.-Prof. Helmut Flachberger": "Chair of Mineral Processing, Montanuniversitaet Leoben",
-  "Univ.-Prof. Thomas Prohaska": "Chair of General and Analytical Chemistry, Montanuniversitaet Leoben",
-  "Univ.-Prof. Christian Mitterer": "Chair of Functional Materials and Materials Systems, Montanuniversitaet Leoben",
-  "Univ.-Prof. Oskar Paris": "Institute of Physics, Montanuniversitaet Leoben",
+  "Univ.-Prof. Markus Lehner": "Chair of Process Technology and Industrial Environmental Protection, Montanuniversität Leoben",
+  "Univ.-Prof. Johannes Schenk": "Chair of Ferrous Metallurgy, Montanuniversität Leoben",
+  "Univ.-Prof. Helmut Antrekowitsch": "Chair of Nonferrous Metallurgy, Montanuniversität Leoben",
+  "Ao.Univ.-Prof. Clemens Brand": "Chair of Applied Mathematics, Montanuniversität Leoben",
+  "Univ.-Prof. Helmut Flachberger": "Chair of Mineral Processing, Montanuniversität Leoben",
+  "Univ.-Prof. Thomas Prohaska": "Chair of General and Analytical Chemistry, Montanuniversität Leoben",
+  "Univ.-Prof. Christian Mitterer": "Chair of Functional Materials and Materials Systems, Montanuniversität Leoben",
+  "Univ.-Prof. Oskar Paris": "Chair of Physics, Montanuniversität Leoben",
   "Bruno Deme": "Institut Laue-Langevin, Grenoble",
-  "Priv.-Doz. David Holec": "Chair of Physical Metallurgy and Metallic Materials, Montanuniversitaet Leoben",
+  "Priv.-Doz. David Holec": "Chair of Physical Metallurgy, Montanuniversität Leoben",
   "Assoc. Prof. Peter Puschnig": "University of Graz",
-  "Univ.-Prof. Wolfgang Kern": "Chair of Chemistry of Polymeric Materials, Montanuniversitaet Leoben",
+  "Univ.-Prof. Wolfgang Kern": "Chair of Chemistry of Polymeric Materials, Montanuniversität Leoben",
   "Priv.-Doz. Markus Puschenreiter": "University of Natural Resources and Life Sciences, Tulln",
-  "Ao.Univ.-Prof. Gregor Mori": "Chair of General and Analytical Chemistry, Montanuniversitaet Leoben",
-  "Univ.-Prof. Ronald Schnitzer": "Chair of Design of Steels, Montanuniversitaet Leoben",
-  "Ass.Prof. Gisbert Riess": "Chair of Chemistry of Polymeric Materials, Montanuniversitaet Leoben",
+  "Ao.Univ.-Prof. Gregor Mori": "Chair of General and Analytical Chemistry, Montanuniversität Leoben",
+  "Univ.-Prof. Ronald Schnitzer": "Chair of Physical Metallurgy, Montanuniversität Leoben",
+  "Ass.Prof. Gisbert Riess": "Chair of Chemistry of Polymeric Materials, Montanuniversität Leoben",
   "Univ.-Prof. Gregor Trimmel": "Graz University of Technology",
-  "Assoc. Prof. Thomas Lucyshyn": "Chair of Polymer Processing, Montanuniversitaet Leoben",
-  "Assoc. Prof. Daniel Kiener": "Chair of Materials Physics, Montanuniversitaet Leoben",
-  "Univ.-Prof. Juergen Eckert": "Chair of Materials Physics, Montanuniversitaet Leoben",
-  "Mag. Florian Spieckermann": "Chair of Materials Physics, Montanuniversitaet Leoben",
-  "Univ.-Prof. Krishna Ravi": "Chair of Drilling and Completion Engineering, Montanuniversitaet Leoben",
-  "Univ.-Prof. Johann Raith": "Chair of Resource Mineralogy, Montanuniversitaet Leoben",
-  "Priv.-Doz. David Misch": "Chair of Petroleum Geology, Montanuniversitaet Leoben",
-  "Univ.-Prof. Reinhard Sachsenhofer": "Chair of Petroleum Geology, Montanuniversitaet Leoben",
+  "Assoc. Prof. Thomas Lucyshyn": "Chair of Polymer Processing, Montanuniversität Leoben",
+  "Assoc. Prof. Daniel Kiener": "Chair of Materials Physics, Montanuniversität Leoben",
+  "Univ.-Prof. Juergen Eckert": "Chair of Materials Physics, Montanuniversität Leoben",
+  "Mag. Florian Spieckermann": "Chair of Materials Physics, Montanuniversität Leoben",
+  "Univ.-Prof. Krishna Ravi": "Chair of Drilling and Completion Engineering, Montanuniversität Leoben",
+  "Univ.-Prof. Johann Raith": "Chair of Resource Mineralogy, Montanuniversität Leoben",
+  "Priv.-Doz. David Misch": "Chair of Energy Geosciences, Montanuniversität Leoben",
+  "Univ.-Prof. Reinhard Sachsenhofer": "Chair of Energy Geosciences, Montanuniversität Leoben",
   "Ao.Univ.Prof. Andreas Loibner": "University of Natural Resources and Life Sciences, Vienna",
-  "Univ.-Prof. Holger Ott": "Chair of Reservoir Engineering, Montanuniversitaet Leoben",
+  "Univ.-Prof. Holger Ott": "Chair of Reservoir Engineering, Montanuniversität Leoben",
   "Priv.-Doz. Roland Brunner": "Materials Centre Leoben",
-  "Assoc. Prof. Edith Bucher": "Chair of Physical Chemistry, Montanuniversitaet Leoben",
+  "Assoc. Prof. Edith Bucher": "Chair of Physical Chemistry, Montanuniversität Leoben",
   "Dr. Christoph Gammer": "Austrian Academy of Sciences",
-  "Univ.-Prof. Werner Sitte": "Chair of Physical Chemistry, Montanuniversitaet Leoben",
-  "Univ.-Prof. Thomas Kienberger": "Chair of Energy Network Technology, Montanuniversitaet Leoben",
+  "Univ.-Prof. Werner Sitte": "Chair of Physical Chemistry, Montanuniversität Leoben",
+  "Univ.-Prof. Thomas Kienberger": "Chair of Energy Network Technology, Montanuniversität Leoben",
 };
 
 export const supervisorDisplayNames: Record<string, string> = {
@@ -75,7 +75,7 @@ export const supervisorDisplayNames: Record<string, string> = {
   "Univ.-Prof. Gregor Trimmel": "Univ.-Prof. Dipl.-Ing. Dr.techn. Gregor Trimmel",
   "Assoc. Prof. Thomas Lucyshyn": "Assoc. Prof. Dipl.-Ing. Dr.mont. Thomas Lucyshyn",
   "Assoc. Prof. Daniel Kiener": "Assoc. Prof. Dipl.-Ing. Dr.mont. Daniel Kiener",
-  "Univ.-Prof. Juergen Eckert": "Univ.-Prof. Dipl.-Ing. Dr.h.c. Dr.-Ing.habil. Juergen Eckert",
+  "Univ.-Prof. Juergen Eckert": "Univ.-Prof. Dipl.-Ing. Dr.-Ing.habil. Dr.h.c. Jürgen Eckert",
   "Mag. Florian Spieckermann": "Mag. et Dr.rer.nat. Florian Spieckermann",
   "Univ.-Prof. Krishna Ravi": "Univ.-Prof. MBA PhD Krishna Ravi",
   "Univ.-Prof. Johann Raith": "Univ.-Prof. Dr.phil. Johann Raith",
@@ -91,36 +91,78 @@ export const supervisorDisplayNames: Record<string, string> = {
   "Bruno Deme": "Bruno Deme",
 };
 
-const supervisorEmails: Record<string, string> = {
-  "Univ.-Prof. Markus Lehner": "markus.lehner@unileoben.ac.at",
-  "Univ.-Prof. Johannes Schenk": "johannes.schenk@unileoben.ac.at",
-  "Univ.-Prof. Helmut Antrekowitsch": "helmut.antrekowitsch@unileoben.ac.at",
-  "Univ.-Prof. Helmut Flachberger": "helmut.flachberger@unileoben.ac.at",
-  "Univ.-Prof. Thomas Prohaska": "thomas.prohaska@unileoben.ac.at",
-  "Univ.-Prof. Christian Mitterer": "christian.mitterer@unileoben.ac.at",
-  "Univ.-Prof. Oskar Paris": "oskar.paris@unileoben.ac.at",
-  "Priv.-Doz. David Holec": "david.holec@unileoben.ac.at",
-  "Univ.-Prof. Wolfgang Kern": "wolfgang.kern@unileoben.ac.at",
-  "Ao.Univ.-Prof. Gregor Mori": "gregor.mori@unileoben.ac.at",
-  "Ass.Prof. Gisbert Riess": "gisbert.riess@unileoben.ac.at",
-  "Assoc. Prof. Thomas Lucyshyn": "thomas.lucyshyn@unileoben.ac.at",
-  "Assoc. Prof. Daniel Kiener": "daniel.kiener@unileoben.ac.at",
-  "Univ.-Prof. Juergen Eckert": "juergen.eckert@unileoben.ac.at",
-  "Mag. Florian Spieckermann": "florian.spieckermann@unileoben.ac.at",
-  "Univ.-Prof. Johann Raith": "johann.raith@unileoben.ac.at",
-  "Priv.-Doz. David Misch": "david.misch@unileoben.ac.at",
-  "Univ.-Prof. Reinhard Sachsenhofer": "reinhard.sachsenhofer@unileoben.ac.at",
-  "Univ.-Prof. Holger Ott": "holger.ott@unileoben.ac.at",
-  "Assoc. Prof. Edith Bucher": "edith.bucher@unileoben.ac.at",
-  "Univ.-Prof. Werner Sitte": "werner.sitte@unileoben.ac.at",
-  "Univ.-Prof. Thomas Kienberger": "thomas.kienberger@unileoben.ac.at",
+const chairHeads: Record<string, ChairContact> = {
+  "Chair of Chemistry of Polymeric Materials": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.techn. Thomas Grießer",
+    email: "thomas.griesser@unileoben.ac.at",
+  },
+  "Chair of Energy Geosciences": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. David Misch",
+    email: "david.misch@unileoben.ac.at",
+  },
+  "Chair of Energy Network Technology": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.techn. Thomas Kienberger",
+    email: "thomas.kienberger@unileoben.ac.at",
+  },
+  "Chair of Ferrous Metallurgy": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Susanne Michelic",
+    email: "susanne.michelic@unileoben.ac.at",
+  },
+  "Chair of Functional Materials and Materials Systems": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Christian Mitterer",
+    email: "christian.mitterer@unileoben.ac.at",
+  },
+  "Chair of General and Analytical Chemistry": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr. techn. Thomas Prohaska",
+    email: "thomas.prohaska@unileoben.ac.at",
+  },
+  "Chair of Materials Physics": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.-Ing.habil. Dr.h.c. Jürgen Eckert",
+    email: "juergen.eckert@unileoben.ac.at",
+  },
+  "Chair of Mineral Processing": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Helmut Flachberger",
+    email: "helmut.flachberger@unileoben.ac.at",
+  },
+  "Chair of Nonferrous Metallurgy": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Helmut Antrekowitsch",
+    email: "helmut.antrekowitsch@unileoben.ac.at",
+  },
+  "Chair of Physical Chemistry": {
+    name: "Univ.-Prof. Mag. et Dr.rer.nat. Christoph Rameshan",
+    email: "christoph.rameshan@unileoben.ac.at",
+  },
+  "Chair of Physical Metallurgy": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Ronald Schnitzer",
+    email: "ronald.schnitzer@unileoben.ac.at",
+  },
+  "Chair of Physics": {
+    name: "Univ.-Prof. Mag. et Dr.rer.nat. Oskar Paris",
+    email: "oskar.paris@unileoben.ac.at",
+  },
+  "Chair of Polymer Processing": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.mont. Clemens Holzer",
+    email: "clemens.holzer@unileoben.ac.at",
+  },
+  "Chair of Process Technology and Industrial Environmental Protection": {
+    name: "Univ.-Prof. Dipl.-Ing. Dr.-Ing. Markus Lehner",
+    email: "markus.lehner@unileoben.ac.at",
+  },
+  "Chair of Reservoir Engineering": {
+    name: "Univ.-Prof. Dipl.-Phys. Dr.rer.nat. Holger Ott",
+    email: "holger.ott@unileoben.ac.at",
+  },
+  "Chair of Resource Mineralogy": {
+    name: "Univ.-Prof. Dr.rer.nat.habil. M.Sc. Mathias Burisch-Hassel",
+    email: "mathias.burisch-hassel@unileoben.ac.at",
+  },
 };
 
 /** Maps publication author surnames to MUL chairs (from research supervisors & symposium affiliations). */
 const authorSurnameToChair: Record<string, string> = {
   Antrekowitsch: "Chair of Nonferrous Metallurgy",
   Bandl: "Chair of Functional Materials and Materials Systems",
-  Bensing: "Chair of Petroleum Geology",
+  Bensing: "Chair of Energy Geosciences",
   Bhosale: "Chair of General and Analytical Chemistry",
   Brunner: "Chair of Physical Chemistry",
   Bucher: "Chair of Physical Chemistry",
@@ -148,14 +190,14 @@ const authorSurnameToChair: Record<string, string> = {
   Leiner: "Chair of Functional Materials and Materials Systems",
   Lucyshyn: "Chair of Polymer Processing",
   "Maier-Kiener": "Chair of Materials Physics",
-  Misch: "Chair of Petroleum Geology",
+  Misch: "Chair of Energy Geosciences",
   Mitterer: "Chair of Functional Materials and Materials Systems",
   Mori: "Chair of General and Analytical Chemistry",
   Moshtaghi: "Chair of General and Analytical Chemistry",
   Neumueller: "Chair of Physical Chemistry",
   Neuschitzer: "Chair of Nonferrous Metallurgy",
   Ott: "Chair of Reservoir Engineering",
-  Paris: "Institute of Physics",
+  Paris: "Chair of Physics",
   Pretschuh: "Chair of Physical Chemistry",
   Pustahija: "Chair of Chemistry of Polymeric Materials",
   Rafailovic: "Chair of Physical Chemistry",
@@ -171,7 +213,7 @@ const authorSurnameToChair: Record<string, string> = {
   Seyffertitz: "Chair of Functional Materials and Materials Systems",
   Sharifian: "Chair of Chemistry of Polymeric Materials",
   Sitte: "Chair of Physical Chemistry",
-  Skerbisch: "Chair of Petroleum Geology",
+  Skerbisch: "Chair of Energy Geosciences",
   Spieckermann: "Chair of Materials Physics",
   Sprung: "Chair of Nonferrous Metallurgy",
   Stiedl: "Chair of Reservoir Engineering",
@@ -185,24 +227,23 @@ const authorSurnameToChair: Record<string, string> = {
 
 const chairLabelsDe: Record<string, string> = {
   "Chair of Chemistry of Polymeric Materials": "Lehrstuhl für Chemie der Kunststoffe",
-  "Chair of Energy Network Technology": "Lehrstuhl für Energienetztechnik",
-  "Chair of Ferrous Metallurgy": "Lehrstuhl für Metallurgie der Stahlproduktion",
+  "Chair of Energy Geosciences": "Lehrstuhl für Energy Geosciences",
+  "Chair of Energy Network Technology": "Lehrstuhl für Energieverbundtechnik",
+  "Chair of Ferrous Metallurgy": "Lehrstuhl für Eisen- und Stahlmetallurgie",
   "Chair of Functional Materials and Materials Systems":
     "Lehrstuhl für Funktionale Werkstoffe und Werkstoffsysteme",
   "Chair of General and Analytical Chemistry": "Lehrstuhl für Allgemeine und Analytische Chemie",
-  "Chair of Materials Physics": "Lehrstuhl für Werkstoffphysik",
-  "Chair of Mineral Processing": "Lehrstuhl für Aufbereitung und Recycling",
-  "Chair of Nonferrous Metallurgy": "Lehrstuhl für Metallurgie der NE-Metalle",
-  "Chair of Petroleum Geology": "Lehrstuhl für Erdölgeologie",
+  "Chair of Materials Physics": "Lehrstuhl für Materialphysik",
+  "Chair of Mineral Processing": "Lehrstuhl für Aufbereitung und Veredlung",
+  "Chair of Nonferrous Metallurgy": "Lehrstuhl für Nichteisenmetallurgie",
   "Chair of Physical Chemistry": "Lehrstuhl für Physikalische Chemie",
-  "Chair of Physical Metallurgy and Metallic Materials":
-    "Lehrstuhl für Physikalische Metallurgie und Werkstoffkunde",
+  "Chair of Physical Metallurgy": "Lehrstuhl für Metallkunde",
+  "Chair of Physics": "Lehrstuhl für Physik",
   "Chair of Polymer Processing": "Lehrstuhl für Kunststoffverarbeitung",
   "Chair of Process Technology and Industrial Environmental Protection":
-    "Lehrstuhl für Verfahrenstechnik und industriellen Umweltschutz",
+    "Lehrstuhl für Verfahrenstechnik des industriellen Umweltschutzes",
   "Chair of Reservoir Engineering": "Lehrstuhl für Reservoir Engineering",
   "Chair of Resource Mineralogy": "Lehrstuhl für Rohstoffmineralogie",
-  "Institute of Physics": "Institut für Physik",
 };
 
 function parseAuthorSurnames(authors: string) {
@@ -211,13 +252,6 @@ function parseAuthorSurnames(authors: string) {
     const comma = trimmed.indexOf(",");
     return comma >= 0 ? trimmed.slice(0, comma).trim() : trimmed;
   });
-}
-
-function extractChairKey(affiliation: string) {
-  const first = affiliation.split(",")[0]?.trim();
-  if (!first) return null;
-  if (first.startsWith("Chair of ") || first.startsWith("Institute of ")) return first;
-  return null;
 }
 
 function collectActiveChairKeys() {
@@ -237,66 +271,24 @@ function collectActiveChairKeys() {
   return chairs;
 }
 
-function contactForSupervisor(supervisorKey: string): ChairContact | null {
-  const email = supervisorEmails[supervisorKey];
-  if (!email) return null;
-  return {
-    name: supervisorDisplayNames[supervisorKey] ?? supervisorKey,
-    email,
-  };
-}
-
-function buildChairContactMap() {
-  const activeChairs = collectActiveChairKeys();
-  const byChair = new Map<string, Map<string, ChairContact>>();
-
-  const addContact = (chairKey: string, supervisorKey: string) => {
-    if (!activeChairs.has(chairKey)) return;
-    const contact = contactForSupervisor(supervisorKey);
-    if (!contact) return;
-    if (!byChair.has(chairKey)) byChair.set(chairKey, new Map());
-    byChair.get(chairKey)!.set(contact.email, contact);
-  };
-
-  for (const item of h2cResearchItems) {
-    for (const supervisorKey of item.supervisors) {
-      const affiliation = supervisorAffiliations[supervisorKey];
-      if (!affiliation) continue;
-      const chairKey = extractChairKey(affiliation);
-      if (chairKey) addContact(chairKey, supervisorKey);
-    }
-  }
-
-  const contactsByChair = new Map<string, ChairContact[]>();
-  for (const [chairKey, contacts] of byChair) {
-    contactsByChair.set(
-      chairKey,
-      [...contacts.values()].sort((a, b) => a.name.localeCompare(b.name)),
-    );
-  }
-
-  return { activeChairs, byChair: contactsByChair };
-}
-
 function localizeChairName(chairKey: string, locale: Locale) {
   if (locale === "de") return chairLabelsDe[chairKey] ?? chairKey;
   return chairKey;
 }
 
 export function getH2CChairNames(locale: Locale) {
-  const { activeChairs } = buildChairContactMap();
+  const activeChairs = collectActiveChairKeys();
   const sorted = [...activeChairs].sort((a, b) => a.localeCompare(b));
   return sorted.map((chair) => localizeChairName(chair, locale));
 }
 
 export function getH2CChairGroups(locale: Locale): ChairGroup[] {
-  const { activeChairs, byChair: contactsByChair } = buildChairContactMap();
-  return [...activeChairs]
-    .sort((a, b) => a.localeCompare(b))
+  return [...collectActiveChairKeys()]
+    .filter((chairKey) => chairKey in chairHeads)
     .map((chairKey) => ({
       chairKey,
       chair: localizeChairName(chairKey, locale),
-      contacts: contactsByChair.get(chairKey) ?? [],
+      contacts: [chairHeads[chairKey]],
     }))
-    .filter((group) => group.contacts.length > 0);
+    .sort((a, b) => a.chair.localeCompare(b.chair, locale));
 }

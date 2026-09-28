@@ -10,7 +10,7 @@ import {
 import { getCommonUi } from "@/data/translations/common";
 import { getH2CChairGroups } from "@/data/h2c-chairs";
 import { getRouteMeta } from "@/data/translations/meta";
-import { getTeamMentors, getTeamUi } from "@/data/translations/team";
+import { getTeamClusterManagers, getTeamMentors, getTeamUi, type TeamMemberCard } from "@/data/translations/team";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocale } from "@/lib/server-i18n";
 
@@ -20,9 +20,65 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({ locale, path: "/team", ...routeMeta });
 }
 
+function TeamMemberCardView({
+  member,
+  phoneLabel,
+  emailLabel,
+}: {
+  member: TeamMemberCard;
+  phoneLabel: string;
+  emailLabel: string;
+}) {
+  return (
+    <article className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)]">
+      <div className="p-4 sm:p-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+          {/* Portrait ratio at every width: a full-width, short crop on phones cut off faces. */}
+          <ContentImage
+            src={member.image}
+            alt={member.name}
+            width={320}
+            height={427}
+            className="aspect-[3/4] w-48 shrink-0 rounded-[0.85rem] border border-[rgba(56,56,55,0.12)] object-cover object-top sm:w-40"
+            sizes="(min-width: 640px) 160px, 192px"
+            data-no-watermark
+          />
+          <div className="min-w-0 flex-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-teal)]">{member.label}</p>
+            <h3 className="mt-1 text-xl font-semibold tracking-tight text-[var(--color-charcoal)]">{member.name}</h3>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              {member.position ? (
+                <>
+                  {member.position}
+                  <br />
+                </>
+              ) : null}
+              {member.details.map((line) => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
+            <div className="mt-3 border-t border-[rgba(56,56,55,0.12)] pt-3 text-sm leading-6 text-[var(--color-charcoal)]">
+              <p>
+                {phoneLabel} {member.phone}
+              </p>
+              <p className="break-all">
+                {emailLabel} {member.email}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default async function HydrogenAndCarbonTeamPage() {
   const locale = await getLocale();
   const t = getTeamUi(locale);
+  const clusterManagers = getTeamClusterManagers(locale);
   const mentors = getTeamMentors(locale);
   const chairGroups = getH2CChairGroups(locale);
   const ui = getCommonUi(locale);
@@ -60,148 +116,19 @@ export default async function HydrogenAndCarbonTeamPage() {
 
       <section className="px-4 pb-12 pt-8 sm:px-10 sm:pb-16 lg:px-16">
         <div className="mx-auto max-w-7xl space-y-8">
-          <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{t.clusterManagers}</p>
-            <div className="mx-auto mt-5 grid max-w-6xl gap-5 lg:grid-cols-2">
-              <article className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)]">
-                <div className="p-4 sm:p-5">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <ContentImage
-                      src="/Scheiblehner-David-1-scaled.jpg"
-                      alt="David Scheiblehner"
-                      width={320}
-                      height={448}
-                      className="h-52 w-full shrink-0 rounded-[0.85rem] border border-[rgba(56,56,55,0.12)] object-cover object-top sm:h-56 sm:w-40"
-                      sizes="160px"
-                      data-no-watermark
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-teal)]">
-                        {t.focusHydrogen}
-                      </p>
-                      <h3 className="mt-1 text-xl font-semibold tracking-tight text-[var(--color-charcoal)]">
-                        David Scheiblehner
-                      </h3>
-                      <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-                        Hydrogen Research Centre
-                        <br />
-                        Montanuniversitaet Leoben
-                        <br />
-                        Dorfstrasse 1, Leitendorf
-                        <br />
-                        8700 Leoben
-                      </p>
-                      <div className="mt-3 border-t border-[rgba(56,56,55,0.12)] pt-3 text-sm leading-6 text-[var(--color-charcoal)]">
-                        <p>
-                          {ui.phone} 03842-402-5217
-                        </p>
-                        <p>
-                          {ui.email} david.scheiblehner@unileoben.ac.at
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)]">
-                <div className="p-4 sm:p-5">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <ContentImage
-                      src="/Robert_Obenaus_Emler.jpg"
-                      alt="Robert Obenaus-Emler"
-                      width={320}
-                      height={448}
-                      className="h-52 w-full shrink-0 rounded-[0.85rem] border border-[rgba(56,56,55,0.12)] object-cover object-top sm:h-56 sm:w-40"
-                      sizes="160px"
-                      data-no-watermark
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-teal)]">
-                        {t.focusCarbon}
-                      </p>
-                      <h3 className="mt-1 text-xl font-semibold tracking-tight text-[var(--color-charcoal)]">
-                        Robert Obenaus-Emler
-                      </h3>
-                      <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-                        Resources Innovation Centre
-                        <br />
-                        Montanuniversitaet Leoben
-                        <br />
-                        Franz Josef-Strasse 18
-                        <br />
-                        8700 Leoben
-                      </p>
-                      <div className="mt-3 border-t border-[rgba(56,56,55,0.12)] pt-3 text-sm leading-6 text-[var(--color-charcoal)]">
-                        <p>
-                          {ui.phone} 03842-402-7613
-                        </p>
-                        <p>
-                          {ui.email} emler@unileoben.ac.at
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </article>
-
-          <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{t.mentors}</p>
-            <div className="mx-auto mt-5 grid max-w-6xl gap-5 lg:grid-cols-2">
-              {mentors.map((mentor) => (
-                <article
-                  key={mentor.email}
-                  className="overflow-hidden rounded-[1.1rem] border border-[rgba(56,56,55,0.1)] bg-[var(--color-surface-soft)]"
-                >
-                  <div className="p-4 sm:p-5">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                      <ContentImage
-                        src={mentor.image}
-                        alt={mentor.name}
-                        width={320}
-                        height={448}
-                        className="h-52 w-full shrink-0 rounded-[0.85rem] border border-[rgba(56,56,55,0.12)] object-cover object-top sm:h-56 sm:w-40"
-                        sizes="160px"
-                        data-no-watermark
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-teal)]">
-                          {mentor.label}
-                        </p>
-                        <h3 className="mt-1 text-xl font-semibold tracking-tight text-[var(--color-charcoal)]">
-                          {mentor.name}
-                        </h3>
-                        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-                          {mentor.position ? (
-                            <>
-                              {mentor.position}
-                              <br />
-                            </>
-                          ) : null}
-                          {mentor.details.map((line) => (
-                            <span key={line}>
-                              {line}
-                              <br />
-                            </span>
-                          ))}
-                        </p>
-                        <div className="mt-3 border-t border-[rgba(56,56,55,0.12)] pt-3 text-sm leading-6 text-[var(--color-charcoal)]">
-                          <p>
-                            {ui.phone} {mentor.phone}
-                          </p>
-                          <p>
-                            {ui.email} {mentor.email}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </article>
+          {[
+            { title: t.clusterManagers, members: clusterManagers },
+            { title: t.mentors, members: mentors },
+          ].map((group) => (
+            <article key={group.title} className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{group.title}</p>
+              <div className="mx-auto mt-5 grid max-w-6xl gap-5 lg:grid-cols-2">
+                {group.members.map((member) => (
+                  <TeamMemberCardView key={member.email} member={member} phoneLabel={ui.phone} emailLabel={ui.email} />
+                ))}
+              </div>
+            </article>
+          ))}
 
           <article className="rounded-[1.75rem] bg-[var(--color-surface)] p-7 editorial-shadow sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">{t.chairs}</p>
