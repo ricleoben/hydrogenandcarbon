@@ -14,9 +14,6 @@ export const teamUi = {
   en: {
     title: "SCoRe A⁺ Hydrogen and Carbon organisational structure",
     clusterManagers: "Cluster Managers",
-    focusCarbon: "Focus Carbon",
-    focusHydrogen: "Focus Hydrogen",
-    mentor: "Mentor",
     mentors: "Mentors",
     chairs: "Chairs",
     contactPerson: "Contact person",
@@ -24,14 +21,50 @@ export const teamUi = {
   de: {
     title: "Organisationsstruktur von SCoRe A⁺ Hydrogen and Carbon",
     clusterManagers: "Cluster-Manager",
-    focusCarbon: "Schwerpunkt Kohlenstoff",
-    focusHydrogen: "Schwerpunkt Wasserstoff",
-    mentor: "Mentor",
     mentors: "Mentoren",
     chairs: "Lehrstühle",
     contactPerson: "Kontaktperson",
   },
 } as const;
+
+export const teamClusterManagers: Record<Locale, TeamMemberCard[]> = {
+  en: [
+    {
+      name: "David Scheiblehner",
+      image: "/Scheiblehner-David-1-scaled.jpg",
+      label: "Focus Hydrogen",
+      details: ["Hydrogen Research Centre", "Montanuniversität Leoben", "Dorfstrasse 1, Leitendorf", "8700 Leoben"],
+      phone: "03842-402-5217",
+      email: "david.scheiblehner@unileoben.ac.at",
+    },
+    {
+      name: "Robert Obenaus-Emler",
+      image: "/Robert_Obenaus_Emler.jpg",
+      label: "Focus Carbon",
+      details: ["Resources Innovation Centre", "Montanuniversität Leoben", "Peter Tunner-Strasse 15", "8700 Leoben"],
+      phone: "03842-402-7613",
+      email: "emler@unileoben.ac.at",
+    },
+  ],
+  de: [
+    {
+      name: "David Scheiblehner",
+      image: "/Scheiblehner-David-1-scaled.jpg",
+      label: "Schwerpunkt Wasserstoff",
+      details: ["Hydrogen Research Centre", "Montanuniversität Leoben", "Dorfstrasse 1, Leitendorf", "8700 Leoben"],
+      phone: "03842-402-5217",
+      email: "david.scheiblehner@unileoben.ac.at",
+    },
+    {
+      name: "Robert Obenaus-Emler",
+      image: "/Robert_Obenaus_Emler.jpg",
+      label: "Schwerpunkt Kohlenstoff",
+      details: ["Resources Innovation Centre", "Montanuniversität Leoben", "Peter Tunner-Strasse 15", "8700 Leoben"],
+      phone: "03842-402-7613",
+      email: "emler@unileoben.ac.at",
+    },
+  ],
+};
 
 export const teamMentors: Record<Locale, TeamMemberCard[]> = {
   en: [
@@ -39,8 +72,8 @@ export const teamMentors: Record<Locale, TeamMemberCard[]> = {
       name: "Helmut Antrekowitsch",
       image: "/HelmutAntrekowitsch.jpg",
       label: "Mentor",
-      position: "Vice Rector, Prof. Dr.",
-      details: ["Montanuniversitaet Leoben", "Franz Josef-Strasse 18", "8700 Leoben"],
+      position: "Univ.-Prof. Dipl.-Ing. Dr.mont.",
+      details: ["Vice-Rector for Research and Sustainability", "Montanuniversität Leoben", "Franz Josef-Strasse 18", "8700 Leoben"],
       phone: "03842-402-0",
       email: "helmut.antrekowitsch@unileoben.ac.at",
     },
@@ -48,10 +81,10 @@ export const teamMentors: Record<Locale, TeamMemberCard[]> = {
       name: "Markus Lehner",
       image: "/markuslehner.jpg",
       label: "Mentor",
-      position: "Univ.-Prof. DI Dr.-Ing.",
+      position: "Univ.-Prof. Dipl.-Ing. Dr.-Ing.",
       details: [
-        "Chair of Energy Process Engineering",
-        "Montanuniversitaet Leoben",
+        "Chair of Process Technology and Industrial Environmental Protection",
+        "Montanuniversität Leoben",
         "Franz Josef-Strasse 18",
         "8700 Leoben",
       ],
@@ -64,8 +97,8 @@ export const teamMentors: Record<Locale, TeamMemberCard[]> = {
       name: "Helmut Antrekowitsch",
       image: "/HelmutAntrekowitsch.jpg",
       label: "Mentor",
-      position: "Vizerektor, Prof. Dr.",
-      details: ["Montanuniversitaet Leoben", "Franz Josef-Strasse 18", "8700 Leoben"],
+      position: "Univ.-Prof. Dipl.-Ing. Dr.mont.",
+      details: ["Vizerektor für Forschung und Nachhaltigkeit", "Montanuniversität Leoben", "Franz Josef-Strasse 18", "8700 Leoben"],
       phone: "03842-402-0",
       email: "helmut.antrekowitsch@unileoben.ac.at",
     },
@@ -73,10 +106,10 @@ export const teamMentors: Record<Locale, TeamMemberCard[]> = {
       name: "Markus Lehner",
       image: "/markuslehner.jpg",
       label: "Mentor",
-      position: "Univ.-Prof. DI Dr.-Ing.",
+      position: "Univ.-Prof. Dipl.-Ing. Dr.-Ing.",
       details: [
-        'Lehrstuhlleiter, Arbeitsgruppenleiter „Energieverfahrenstechnik"',
-        "Montanuniversitaet Leoben",
+        "Lehrstuhl für Verfahrenstechnik des industriellen Umweltschutzes",
+        "Montanuniversität Leoben",
         "Franz Josef-Strasse 18",
         "8700 Leoben",
       ],
@@ -88,6 +121,10 @@ export const teamMentors: Record<Locale, TeamMemberCard[]> = {
 
 export function getTeamUi(locale: Locale) {
   return teamUi[locale];
+}
+
+export function getTeamClusterManagers(locale: Locale) {
+  return teamClusterManagers[locale];
 }
 
 export function getTeamMentors(locale: Locale) {
